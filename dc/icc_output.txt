@@ -1,0 +1,316 @@
+Initializing gui preferences from file  /home/under_ksh/.synopsys_icc_prefs.tcl
+Warning: Cannot use command line editor for terminal type 'xterm'.  (UI-74)
+icc_shell> start_gui
+Information: Visibility is turned ON for cells and cell contents because the task is set to Block Implementation (GUI-026)
+icc_shell> create_mw_lib  -technology /home/espanol/libraries/PDKS/SAED32_EDK_12162019/tech/milkyway/saed32nm_1p9m_mw.tf -mw_reference_library {/home/espanol/libraries/PDKS/SAED32_EDK_12162019/lib/io_sp/milkyway/HSTL_fc /home/espanol/libraries/PDKS/SAED32_EDK_12162019/lib/io_sp/milkyway/HSTL_wb /home/espanol/libraries/PDKS/SAED32_EDK_12162019/lib/io_sp/milkyway/MDDR_fc /home/espanol/libraries/PDKS/SAED32_EDK_12162019/lib/io_sp/milkyway/MDDR_wb /home/espanol/libraries/PDKS/SAED32_EDK_12162019/lib/io_sp/milkyway/SSTL_fc /home/espanol/libraries/PDKS/SAED32_EDK_12162019/lib/io_sp/milkyway/SSTL_wb /home/espanol/libraries/PDKS/SAED32_EDK_12162019/lib/io_std/milkyway/saed32_io_fc /home/espanol/libraries/PDKS/SAED32_EDK_12162019/lib/io_std/milkyway/saed32_io_wb /home/espanol/libraries/PDKS/SAED32_EDK_12162019/lib/pll/milkyway/SAED32_PLL_FR /home/espanol/libraries/PDKS/SAED32_EDK_12162019/lib/stdcell_hvt/milkyway/saed32nm_hvt_1p9m} -bus_naming_style {[%d]}  -open  /home/under_ksh/lxp32_project/dc/milkyway
+Start to load technology file /home/espanol/libraries/PDKS/SAED32_EDK_12162019/tech/milkyway/saed32nm_1p9m_mw.tf.
+Warning: Layer 'M1' has a pitch 0.152 that does not match the recommended wire-to-via pitch 0.13 or 0.105. (TFCHK-049)
+Warning: Layer 'M2' has a pitch 0.152 that does not match the recommended wire-to-via pitch 0.139. (TFCHK-049)
+Warning: Layer 'M3' has a pitch 0.304 that does not match the recommended wire-to-via pitch 0.139. (TFCHK-049)
+Warning: Layer 'M4' has a pitch 0.304 that does not match the recommended wire-to-via pitch 0.139. (TFCHK-049)
+Warning: Layer 'M5' has a pitch 0.608 that does not match the recommended wire-to-via pitch 0.139. (TFCHK-049)
+Warning: Layer 'M6' has a pitch 0.608 that does not match the recommended wire-to-via pitch 0.139. (TFCHK-049)
+Warning: Layer 'M7' has a pitch 1.216 that does not match the recommended wire-to-via pitch 0.139. (TFCHK-049)
+Warning: Layer 'M8' has a pitch 1.216 that does not match the recommended wire-to-via pitch 0.179 or 0.164. (TFCHK-049)
+Warning: Layer 'M9' has a pitch 2.432 that does not match the recommended wire-to-via pitch 1.74. (TFCHK-049)
+Warning: Layer 'MRDL' has a pitch 4.864 that does not match the recommended wire-to-via pitch 4.5. (TFCHK-049)
+Warning: Layer 'MRDL' has a pitch 4.864 that does not match the doubled pitch 2.432 or tripled pitch 3.648. (TFCHK-050)
+Warning: CapModel sections are missing. Capacitance models should be loaded with a TLU+ file later. (TFCHK-084)
+Technology file /home/espanol/libraries/PDKS/SAED32_EDK_12162019/tech/milkyway/saed32nm_1p9m_mw.tf has been loaded successfully.
+Warning: Reference Library Inconsistent With Main Library
+Reference Library: /home/espanol/libraries/PDKS/SAED32_EDK_12162019/lib/io_sp/milkyway/HSTL_wb (MWLIBP-300)
+Warning: Inconsistent Resistance Precision:
+        10000 (Main Library) <==> 10000000 (Reference Library). (MWLIBP-301)
+Warning: Inconsistent Capacitance Precision:
+        10000 (Main Library) <==> 10000000 (Reference Library). (MWLIBP-301)
+Warning: Inconsistent Capacitance Unit Name: 
+        ff (Main Library) <==> pf (Reference Library). (MWLIBP-302)
+Warning: Inconsistent Data for Layer 43
+        Main Library (milkyway)     |   Reference Library (HSTL_wb)
+        Layer Name     MRDL9PIN     |   MRPIN    (MWLIBP-319)
+Warning: Inconsistent Data for Layer 25
+        Main Library (milkyway)     |   Reference Library (HSTL_wb)
+        Layer Name     M8           |   VIA5
+        Mask Name      metal8       |   via5     (MWLIBP-319)
+Warning: Inconsistent Data for Layer 26
+        Main Library (milkyway)     |   Reference Library (HSTL_wb)
+        Layer Name     VIA8         |   VIA6
+        Mask Name      via8         |   via6     (MWLIBP-319)
+Warning: Inconsistent Data for Layer 27
+        Main Library (milkyway)     |   Reference Library (HSTL_wb)
+        Layer Name     M9           |   VIA7
+        Mask Name      metal9       |   via7     (MWLIBP-319)
+Warning: Inconsistent Data for Layer 28
+        Main Library (milkyway)     |   Reference Library (HSTL_wb)
+        Layer Name     CO           |   VIA8
+        Mask Name      polyCont     |   via8     (MWLIBP-319)
+Warning: Inconsistent Data for Layer 21
+        Main Library (milkyway)     |   Reference Library (HSTL_wb)
+        Layer Name     M6           |   VIA1
+        Mask Name      metal6       |   via1     (MWLIBP-319)
+Warning: Inconsistent Data for Layer 22
+        Main Library (milkyway)     |   Reference Library (HSTL_wb)
+        Layer Name     VIA6         |   VIA2
+        Mask Name      via6         |   via2     (MWLIBP-319)
+Warning: Inconsistent Data for Layer 23
+        Main Library (milkyway)     |   Reference Library (HSTL_wb)
+        Layer Name     M7           |   VIA3
+        Mask Name      metal7       |   via3     (MWLIBP-319)
+Warning: Inconsistent Data for Layer 24
+        Main Library (milkyway)     |   Reference Library (HSTL_wb)
+        Layer Name     VIA7         |   VIA4
+        Mask Name      via7         |   via4     (MWLIBP-319)
+Warning: Inconsistent Data for Layer 17
+        Main Library (milkyway)     |   Reference Library (HSTL_wb)
+        Layer Name     M4           |   M7
+        Mask Name      metal4       |   metal7   (MWLIBP-319)
+Warning: Inconsistent Data for Layer 18
+        Main Library (milkyway)     |   Reference Library (HSTL_wb)
+        Layer Name     VIA4         |   M8
+        Mask Name      via4         |   metal8   (MWLIBP-319)
+Warning: Inconsistent Data for Layer 19
+        Main Library (milkyway)     |   Reference Library (HSTL_wb)
+        Layer Name     M5           |   M9
+        Mask Name      metal5       |   metal9   (MWLIBP-319)
+Warning: Inconsistent Data for Layer 20
+        Main Library (milkyway)     |   Reference Library (HSTL_wb)
+        Layer Name     VIA5         |   CO
+        Mask Name      via5         |   polyCont         (MWLIBP-319)
+Warning: Inconsistent Data for Layer 13
+        Main Library (milkyway)     |   Reference Library (HSTL_wb)
+        Layer Name     M2           |   M3
+        Mask Name      metal2       |   metal3   (MWLIBP-319)
+Warning: Inconsistent Data for Layer 14
+        Main Library (milkyway)     |   Reference Library (HSTL_wb)
+        Layer Name     VIA2         |   M4
+        Mask Name      via2         |   metal4   (MWLIBP-319)
+Warning: Inconsistent Data for Layer 15
+        Main Library (milkyway)     |   Reference Library (HSTL_wb)
+        Layer Name     M3           |   M5
+        Mask Name      metal3       |   metal5   (MWLIBP-319)
+Warning: Inconsistent Data for Layer 16
+        Main Library (milkyway)     |   Reference Library (HSTL_wb)
+        Layer Name     VIA3         |   M6
+        Mask Name      via3         |   metal6   (MWLIBP-319)
+Warning: Inconsistent Data for Layer 12
+        Main Library (milkyway)     |   Reference Library (HSTL_wb)
+        Layer Name     VIA1         |   M2
+        Mask Name      via1         |   metal2   (MWLIBP-319)
+Warning: Reference Library Inconsistent With Main Library
+Reference Library: /home/espanol/libraries/PDKS/SAED32_EDK_12162019/lib/io_sp/milkyway/MDDR_fc (MWLIBP-300)
+Warning: Inconsistent Resistance Precision:
+        10000 (Main Library) <==> 10000000 (Reference Library). (MWLIBP-301)
+Warning: Inconsistent Capacitance Precision:
+        10000 (Main Library) <==> 10000000 (Reference Library). (MWLIBP-301)
+Warning: Inconsistent Capacitance Unit Name: 
+        ff (Main Library) <==> pf (Reference Library). (MWLIBP-302)
+Warning: Inconsistent Data for Layer 43
+        Main Library (milkyway)     |   Reference Library (MDDR_fc)
+        Layer Name     MRDL9PIN     |   MRPIN    (MWLIBP-319)
+Warning: Reference Library Inconsistent With Main Library
+Reference Library: /home/espanol/libraries/PDKS/SAED32_EDK_12162019/lib/io_sp/milkyway/MDDR_wb (MWLIBP-300)
+Warning: Inconsistent Resistance Precision:
+        10000 (Main Library) <==> 10000000 (Reference Library). (MWLIBP-301)
+Warning: Inconsistent Capacitance Precision:
+        10000 (Main Library) <==> 10000000 (Reference Library). (MWLIBP-301)
+Warning: Inconsistent Capacitance Unit Name: 
+        ff (Main Library) <==> pf (Reference Library). (MWLIBP-302)
+Warning: Inconsistent Data for Layer 43
+        Main Library (milkyway)     |   Reference Library (MDDR_wb)
+        Layer Name     MRDL9PIN     |   MRPIN    (MWLIBP-319)
+Warning: Inconsistent Data for Layer 25
+        Main Library (milkyway)     |   Reference Library (MDDR_wb)
+        Layer Name     M8           |   VIA5
+        Mask Name      metal8       |   via5     (MWLIBP-319)
+Warning: Inconsistent Data for Layer 26
+        Main Library (milkyway)     |   Reference Library (MDDR_wb)
+        Layer Name     VIA8         |   VIA6
+        Mask Name      via8         |   via6     (MWLIBP-319)
+Warning: Inconsistent Data for Layer 27
+        Main Library (milkyway)     |   Reference Library (MDDR_wb)
+        Layer Name     M9           |   VIA7
+        Mask Name      metal9       |   via7     (MWLIBP-319)
+Warning: Inconsistent Data for Layer 28
+        Main Library (milkyway)     |   Reference Library (MDDR_wb)
+        Layer Name     CO           |   VIA8
+        Mask Name      polyCont     |   via8     (MWLIBP-319)
+Warning: Inconsistent Data for Layer 21
+        Main Library (milkyway)     |   Reference Library (MDDR_wb)
+        Layer Name     M6           |   VIA1
+        Mask Name      metal6       |   via1     (MWLIBP-319)
+Warning: Inconsistent Data for Layer 22
+        Main Library (milkyway)     |   Reference Library (MDDR_wb)
+        Layer Name     VIA6         |   VIA2
+        Mask Name      via6         |   via2     (MWLIBP-319)
+Warning: Inconsistent Data for Layer 23
+        Main Library (milkyway)     |   Reference Library (MDDR_wb)
+        Layer Name     M7           |   VIA3
+        Mask Name      metal7       |   via3     (MWLIBP-319)
+Warning: Inconsistent Data for Layer 24
+        Main Library (milkyway)     |   Reference Library (MDDR_wb)
+        Layer Name     VIA7         |   VIA4
+        Mask Name      via7         |   via4     (MWLIBP-319)
+Warning: Inconsistent Data for Layer 17
+        Main Library (milkyway)     |   Reference Library (MDDR_wb)
+        Layer Name     M4           |   M7
+        Mask Name      metal4       |   metal7   (MWLIBP-319)
+Warning: Inconsistent Data for Layer 18
+        Main Library (milkyway)     |   Reference Library (MDDR_wb)
+        Layer Name     VIA4         |   M8
+        Mask Name      via4         |   metal8   (MWLIBP-319)
+Warning: Inconsistent Data for Layer 19
+        Main Library (milkyway)     |   Reference Library (MDDR_wb)
+        Layer Name     M5           |   M9
+        Mask Name      metal5       |   metal9   (MWLIBP-319)
+Warning: Inconsistent Data for Layer 20
+        Main Library (milkyway)     |   Reference Library (MDDR_wb)
+        Layer Name     VIA5         |   CO
+        Mask Name      via5         |   polyCont         (MWLIBP-319)
+Warning: Inconsistent Data for Layer 13
+        Main Library (milkyway)     |   Reference Library (MDDR_wb)
+        Layer Name     M2           |   M3
+        Mask Name      metal2       |   metal3   (MWLIBP-319)
+Warning: Inconsistent Data for Layer 14
+        Main Library (milkyway)     |   Reference Library (MDDR_wb)
+        Layer Name     VIA2         |   M4
+        Mask Name      via2         |   metal4   (MWLIBP-319)
+Warning: Inconsistent Data for Layer 15
+        Main Library (milkyway)     |   Reference Library (MDDR_wb)
+        Layer Name     M3           |   M5
+        Mask Name      metal3       |   metal5   (MWLIBP-319)
+Warning: Inconsistent Data for Layer 16
+        Main Library (milkyway)     |   Reference Library (MDDR_wb)
+        Layer Name     VIA3         |   M6
+        Mask Name      via3         |   metal6   (MWLIBP-319)
+Warning: Inconsistent Data for Layer 12
+        Main Library (milkyway)     |   Reference Library (MDDR_wb)
+        Layer Name     VIA1         |   M2
+        Mask Name      via1         |   metal2   (MWLIBP-319)
+Warning: Reference Library Inconsistent With Main Library
+Reference Library: /home/espanol/libraries/PDKS/SAED32_EDK_12162019/lib/io_sp/milkyway/SSTL_wb (MWLIBP-300)
+Warning: Inconsistent Resistance Precision:
+        10000 (Main Library) <==> 10000000 (Reference Library). (MWLIBP-301)
+Warning: Inconsistent Capacitance Precision:
+        10000 (Main Library) <==> 10000000 (Reference Library). (MWLIBP-301)
+Warning: Inconsistent Capacitance Unit Name: 
+        ff (Main Library) <==> pf (Reference Library). (MWLIBP-302)
+Warning: Inconsistent Data for Layer 43
+        Main Library (milkyway)     |   Reference Library (SSTL_wb)
+        Layer Name     MRDL9PIN     |   MRPIN    (MWLIBP-319)
+Warning: Inconsistent Data for Layer 25
+        Main Library (milkyway)     |   Reference Library (SSTL_wb)
+        Layer Name     M8           |   VIA5
+        Mask Name      metal8       |   via5     (MWLIBP-319)
+Warning: Inconsistent Data for Layer 26
+        Main Library (milkyway)     |   Reference Library (SSTL_wb)
+        Layer Name     VIA8         |   VIA6
+        Mask Name      via8         |   via6     (MWLIBP-319)
+Warning: Inconsistent Data for Layer 27
+        Main Library (milkyway)     |   Reference Library (SSTL_wb)
+        Layer Name     M9           |   VIA7
+        Mask Name      metal9       |   via7     (MWLIBP-319)
+Warning: Inconsistent Data for Layer 28
+        Main Library (milkyway)     |   Reference Library (SSTL_wb)
+        Layer Name     CO           |   VIA8
+        Mask Name      polyCont     |   via8     (MWLIBP-319)
+Warning: Inconsistent Data for Layer 21
+        Main Library (milkyway)     |   Reference Library (SSTL_wb)
+        Layer Name     M6           |   VIA1
+        Mask Name      metal6       |   via1     (MWLIBP-319)
+Warning: Inconsistent Data for Layer 22
+        Main Library (milkyway)     |   Reference Library (SSTL_wb)
+        Layer Name     VIA6         |   VIA2
+        Mask Name      via6         |   via2     (MWLIBP-319)
+Warning: Inconsistent Data for Layer 23
+        Main Library (milkyway)     |   Reference Library (SSTL_wb)
+        Layer Name     M7           |   VIA3
+        Mask Name      metal7       |   via3     (MWLIBP-319)
+Warning: Inconsistent Data for Layer 24
+        Main Library (milkyway)     |   Reference Library (SSTL_wb)
+        Layer Name     VIA7         |   VIA4
+        Mask Name      via7         |   via4     (MWLIBP-319)
+Warning: Inconsistent Data for Layer 17
+        Main Library (milkyway)     |   Reference Library (SSTL_wb)
+        Layer Name     M4           |   M7
+        Mask Name      metal4       |   metal7   (MWLIBP-319)
+Warning: Inconsistent Data for Layer 18
+        Main Library (milkyway)     |   Reference Library (SSTL_wb)
+        Layer Name     VIA4         |   M8
+        Mask Name      via4         |   metal8   (MWLIBP-319)
+Warning: Inconsistent Data for Layer 19
+        Main Library (milkyway)     |   Reference Library (SSTL_wb)
+        Layer Name     M5           |   M9
+        Mask Name      metal5       |   metal9   (MWLIBP-319)
+Warning: Inconsistent Data for Layer 20
+        Main Library (milkyway)     |   Reference Library (SSTL_wb)
+        Layer Name     VIA5         |   CO
+        Mask Name      via5         |   polyCont         (MWLIBP-319)
+Warning: Inconsistent Data for Layer 13
+        Main Library (milkyway)     |   Reference Library (SSTL_wb)
+        Layer Name     M2           |   M3
+        Mask Name      metal2       |   metal3   (MWLIBP-319)
+Warning: Inconsistent Data for Layer 14
+        Main Library (milkyway)     |   Reference Library (SSTL_wb)
+        Layer Name     VIA2         |   M4
+        Mask Name      via2         |   metal4   (MWLIBP-319)
+Warning: Inconsistent Data for Layer 15
+        Main Library (milkyway)     |   Reference Library (SSTL_wb)
+        Layer Name     M3           |   M5
+        Mask Name      metal3       |   metal5   (MWLIBP-319)
+Warning: Inconsistent Data for Layer 16
+        Main Library (milkyway)     |   Reference Library (SSTL_wb)
+        Layer Name     VIA3         |   M6
+        Mask Name      via3         |   metal6   (MWLIBP-319)
+Warning: Inconsistent Data for Layer 12
+        Main Library (milkyway)     |   Reference Library (SSTL_wb)
+        Layer Name     VIA1         |   M2
+        Mask Name      via1         |   metal2   (MWLIBP-319)
+{milkyway}
+icc_shell> import_designs -format ddc {/home/under_ksh/lxp32_project/dc/outputs/flat_syn.ddc}
+Loading db file '/home/espanol/libraries/PDKS/SAED32_EDK_12162019/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95v125c.db'
+Warning: Unit conflict found: Milkyway technology file resistance unit is kOhm; main library resistance unit is MOhm. (IFS-007)
+Loading db file '/home/espanol/libraries/PDKS/SAED32_EDK_12162019/lib/pll/db_nldm/saed32pll_ss0p95v125c_2p25v.db'
+Warning: Unit conflict found: Milkyway technology file power unit is pW; main library power unit is uW. (IFS-007)
+Loading db file '/home/espanol/libraries/PDKS/SAED32_EDK_12162019/lib/io_std/db_nldm/saed32io_fc_ss0p95v125c_2p25v.db'
+Loading db file '/usr/synopsys/ICC/libraries/syn/dw_foundation.sldb'
+Loading db file '/usr/synopsys/ICC/libraries/syn/gtech.db'
+Loading db file '/usr/synopsys/ICC/libraries/syn/standard.sldb'
+Information: linking reference library : /home/espanol/libraries/PDKS/SAED32_EDK_12162019/lib/io_sp/milkyway/HSTL_fc. (PSYN-878)
+Information: linking reference library : /home/espanol/libraries/PDKS/SAED32_EDK_12162019/lib/io_sp/milkyway/HSTL_wb. (PSYN-878)
+Information: linking reference library : /home/espanol/libraries/PDKS/SAED32_EDK_12162019/lib/io_sp/milkyway/MDDR_fc. (PSYN-878)
+Information: linking reference library : /home/espanol/libraries/PDKS/SAED32_EDK_12162019/lib/io_sp/milkyway/MDDR_wb. (PSYN-878)
+Information: linking reference library : /home/espanol/libraries/PDKS/SAED32_EDK_12162019/lib/io_sp/milkyway/SSTL_fc. (PSYN-878)
+Information: linking reference library : /home/espanol/libraries/PDKS/SAED32_EDK_12162019/lib/io_sp/milkyway/SSTL_wb. (PSYN-878)
+Information: linking reference library : /home/espanol/libraries/PDKS/SAED32_EDK_12162019/lib/io_std/milkyway/saed32_io_fc. (PSYN-878)
+Information: linking reference library : /home/espanol/libraries/PDKS/SAED32_EDK_12162019/lib/io_std/milkyway/saed32_io_wb. (PSYN-878)
+Information: linking reference library : /home/espanol/libraries/PDKS/SAED32_EDK_12162019/lib/pll/milkyway/SAED32_PLL_FR. (PSYN-878)
+Information: linking reference library : /home/espanol/libraries/PDKS/SAED32_EDK_12162019/lib/stdcell_hvt/milkyway/saed32nm_hvt_1p9m. (PSYN-878)
+  Loading link library 'saed32hvt_ss0p95v125c'
+  Loading link library 'saed32pll_ss0p95v125c_2p25v'
+  Loading link library 'saed32io_fc_ss0p95v125c_2p25v'
+  Loading link library 'gtech'
+Reading ddc file '/home/under_ksh/lxp32_project/dc/outputs/flat_syn.ddc'.
+Loaded 1 design.
+Current design is 'lxp32c_top'.
+Current design is 'lxp32c_top'.
+
+  Linking design 'lxp32c_top'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  lxp32c_top                  /home/under_ksh/lxp32_project/dc/outputs/flat_syn.ddc
+  saed32hvt_ss0p95v125c (library) /home/espanol/libraries/PDKS/SAED32_EDK_12162019/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95v125c.db
+  saed32pll_ss0p95v125c_2p25v (library) /home/espanol/libraries/PDKS/SAED32_EDK_12162019/lib/pll/db_nldm/saed32pll_ss0p95v125c_2p25v.db
+  saed32io_fc_ss0p95v125c_2p25v (library) /home/espanol/libraries/PDKS/SAED32_EDK_12162019/lib/io_std/db_nldm/saed32io_fc_ss0p95v125c_2p25v.db
+  dw_foundation.sldb (library) /usr/synopsys/ICC/libraries/syn/dw_foundation.sldb
+
+Info: Creating auto CEL.
+Preparing data for query................... 
+Information: Performing CEL netlist consistency check. (MWDC-118)
+Information: CEL consistency check PASSED. (MWDC-119)
+Information: Saved design named lxp32c_top. (UIG-5)
+Preparing data for query................... 
+1
+icc_shell> quit
+
+Thank you...
+

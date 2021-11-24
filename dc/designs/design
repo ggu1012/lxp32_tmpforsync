@@ -1,0 +1,100 @@
+Information: Updating design information... (UID-85)
+Warning: Design 'lxp32c_top' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : design
+Design : lxp32c_top
+Version: N-2017.09-SP3
+Date   : Thu Nov 25 01:18:14 2021
+****************************************
+
+Design allows ideal nets on clock nets.
+
+Library(s) Used:
+
+    saed32hvt_ss0p95v125c (File: /home/espanol/libraries/PDKS/SAED32_EDK_12162019/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95v125c.db)
+    saed32sram_ss0p95v125c (File: /home/espanol/libraries/PDKS/SAED32_EDK_12162019/lib/sram/db_nldm/saed32sram_ss0p95v125c.db)
+
+Local Link Library:
+
+    {/home/espanol/libraries/PDKS/SAED32_EDK_12162019/lib/sram/db_nldm/saed32sram_ss0p95v125c.db, /home/espanol/libraries/PDKS/SAED32_EDK_12162019/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95v125c.db, /home/espanol/libraries/PDKS/SAED32_EDK_12162019/lib/pll/db_nldm/saed32pll_ss0p95v125c_2p25v.db, /home/espanol/libraries/PDKS/SAED32_EDK_12162019/lib/io_std/db_nldm/saed32io_fc_ss0p95v125c_2p25v.db}
+
+Flip-Flop Types:
+
+    No flip-flop types specified.
+
+Latch Types:
+
+    No latch types specified.
+
+Operating Conditions:
+
+
+    Operating Condition Name : ss0p95v125c
+    Library : saed32sram_ss0p95v125c
+    Process :   0.99
+    Temperature : 125.00
+    Voltage :   0.95
+    Interconnect Model : best_case_tree
+
+Wire Loading Model:
+
+    Selected automatically from the total cell area.
+
+Name           :   280000
+Location       :   saed32sram_ss0p95v125c
+Resistance     :   0.011
+Capacitance    :   0.000157
+Area           :   0.01
+Slope          :   266.705
+Fanout   Length   Points Average Cap Std Deviation
+--------------------------------------------------------------
+     1    22.32
+     2    52.49
+     3    87.98
+     4   129.72
+     5   178.62
+     6   235.60
+     7   301.59
+     8   377.49
+     9   464.24
+    10   562.75
+    11   673.94
+    12   798.74
+    13   938.05
+    14  1092.80
+    15  1263.92
+    16  1452.31
+    17  1658.90
+    18  1884.61
+    19  2130.35
+    20  2397.06
+
+
+
+Wire Loading Model Mode: enclosed.
+
+Timing Ranges:
+
+    No timing ranges specified.
+
+Pin Input Delays:
+
+    None specified.
+
+Pin Output Delays:
+
+    None specified.
+
+Disabled Timing Arcs:
+
+    No arcs disabled.
+
+Required Licenses:
+
+    DesignWare
+
+Design Parameters:
+
+    None specified.
+1

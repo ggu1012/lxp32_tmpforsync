@@ -1,0 +1,57 @@
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : lxp32c_top
+Version: N-2017.09-SP3
+Date   : Thu Nov 25 01:18:14 2021
+****************************************
+
+
+Library(s) Used:
+
+    saed32hvt_ss0p95v125c (File: /home/espanol/libraries/PDKS/SAED32_EDK_12162019/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95v125c.db)
+    saed32sram_ss0p95v125c (File: /home/espanol/libraries/PDKS/SAED32_EDK_12162019/lib/sram/db_nldm/saed32sram_ss0p95v125c.db)
+
+
+Operating Conditions: ss0p95v125c   Library: saed32sram_ss0p95v125c
+Wire Load Model Mode: enclosed
+
+Design        Wire Load Model            Library
+------------------------------------------------
+lxp32c_top             280000            saed32sram_ss0p95v125c
+lxp32_execute_0_1_dsp  16000             saed32sram_ss0p95v125c
+lxp32_ram256x32_1      140000            saed32sram_ss0p95v125c
+lxp32_ram256x32_0      140000            saed32sram_ss0p95v125c
+
+
+Global Operating Voltage = 0.95 
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+  Cell Internal Power  =  49.2943 mW  (100%)
+  Net Switching Power  =  60.8066 uW    (0%)
+                         ---------
+Total Dynamic Power    =  49.3551 mW  (100%)
+
+Cell Leakage Power     =   3.6748 mW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory           697.4167            1.3604            0.0000          698.7770  (   1.32%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
+register       4.8543e+04            8.3774        2.2866e+09        5.0838e+04  (  95.85%)
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
+combinational     60.5281           51.0689        1.3882e+09        1.4998e+03  (   2.83%)
+--------------------------------------------------------------------------------------------------
+Total          4.9300e+04 uW        60.8066 uW     3.6748e+09 pW     5.3036e+04 uW
+1

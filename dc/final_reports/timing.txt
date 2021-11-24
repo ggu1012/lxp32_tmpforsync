@@ -1,0 +1,73 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : lxp32c_top
+Version: N-2017.09-SP3
+Date   : Thu Nov 25 01:18:14 2021
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: ss0p95v125c   Library: saed32sram_ss0p95v125c
+Wire Load Model Mode: enclosed
+
+  Startpoint: cpu_inst/decode_inst/rd2_select_reg
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: cpu_inst/execute_inst/alu_inst/mul_inst/mul00_inst/p_o_reg[21]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: clk_i
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  lxp32c_top         280000                saed32sram_ss0p95v125c
+  lxp32_execute_0_1_dsp
+                     16000                 saed32sram_ss0p95v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  cpu_inst/decode_inst/rd2_select_reg/CLK (DFFX1_HVT)     0.00 #     0.00 r
+  cpu_inst/decode_inst/rd2_select_reg/Q (DFFX1_HVT)       0.20       0.20 r
+  U506/Y (AND2X2_HVT)                                     0.12       0.32 r
+  U457/Y (AO22X1_HVT)                                     0.10       0.42 r
+  U462/Y (AO21X2_HVT)                                     0.12       0.54 r
+  cpu_inst/execute_inst/op2_i[4] (lxp32_execute_0_1_dsp)
+                                                          0.00       0.54 r
+  cpu_inst/execute_inst/U627/Y (AND2X1_HVT)               0.10       0.64 r
+  cpu_inst/execute_inst/U103/Y (XOR2X2_HVT)               0.14       0.78 f
+  cpu_inst/execute_inst/U1303/S (FADDX1_HVT)              0.20       0.98 r
+  cpu_inst/execute_inst/U1339/CO (FADDX1_HVT)             0.15       1.13 r
+  cpu_inst/execute_inst/U1343/S (FADDX1_HVT)              0.23       1.36 f
+  cpu_inst/execute_inst/U106/Y (XOR3X2_HVT)               0.25       1.62 r
+  cpu_inst/execute_inst/U125/Y (OR2X1_HVT)                0.09       1.71 r
+  cpu_inst/execute_inst/U100/Y (AND2X1_HVT)               0.09       1.79 r
+  cpu_inst/execute_inst/U99/Y (NAND3X0_HVT)               0.08       1.87 f
+  cpu_inst/execute_inst/U123/Y (OR2X1_HVT)                0.10       1.97 f
+  cpu_inst/execute_inst/U122/Y (AND2X1_HVT)               0.08       2.05 f
+  cpu_inst/execute_inst/U523/Y (INVX2_HVT)                0.04       2.09 r
+  cpu_inst/execute_inst/U94/Y (NAND2X0_HVT)               0.05       2.13 f
+  cpu_inst/execute_inst/U93/Y (NAND2X0_HVT)               0.07       2.20 r
+  cpu_inst/execute_inst/U557/Y (XNOR2X2_HVT)              0.13       2.34 r
+  cpu_inst/execute_inst/alu_inst/mul_inst/mul00_inst/p_o_reg[21]/D (DFFX1_HVT)
+                                                          0.00       2.34 r
+  data arrival time                                                  2.34
+
+  clock clk_i (rise edge)                                 2.00       2.00
+  clock network delay (ideal)                             0.00       2.00
+  cpu_inst/execute_inst/alu_inst/mul_inst/mul00_inst/p_o_reg[21]/CLK (DFFX1_HVT)
+                                                          0.00       2.00 r
+  library setup time                                     -0.09       1.91
+  data required time                                                 1.91
+  --------------------------------------------------------------------------
+  data required time                                                 1.91
+  data arrival time                                                 -2.34
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.43
+
+
+1
