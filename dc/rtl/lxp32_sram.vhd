@@ -50,7 +50,6 @@ architecture rtl of lxp32_ram128x32 is
 begin
     G1: SRAM2RW128x32 
         port map(
-            asdfasldhfj
             CE1 => CE1,
             CE2 => CE2,
             WEB1 =>WEB1,
