@@ -38,6 +38,7 @@ architecture rtl of lxp32_ram128x32 is
         CSB1: in std_logic;
         CSB2: in std_logic;
 
+        asdfasldfhl
         A1: in std_logic_vector(6 downto 0);
         A2: in std_logic_vector(6 downto 0);
         I1: in std_logic_vector(31 downto 0);
