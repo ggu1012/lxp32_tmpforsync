@@ -111,8 +111,8 @@ read_offset<=unsigned(lli_adr_mux(7 downto 0));
 
 ram_waddr<=std_logic_vector(current_offset);
 ram_raddr<=std_logic_vector(read_offset);
-ram_we<= not (wb_stb and wbm_ack_i);
-ram_re<= not (lli_re_i or miss);
+ram_we<= not (wb_stb and wbm_ack_i); -- low active
+ram_re<= not (lli_re_i or miss); -- low active
 
 -- channel 1 for only read
 -- channel 2 for only write
@@ -145,9 +145,9 @@ sram_inst2: entity work.lxp32_ram128x32(rtl)
 	port map(
 		CE1 => clk_i, -- clk
 		CE2 => clk_i, -- clk
-		WEB1 => '1', -- write enable, active low
+		WEB1 => '1', -- write disable
 		WEB2 => ram_we, -- write enable, active low
-		OEB1=> ram_re, -- output enable, active low
+		OEB1=> ram_re, -- output disable
 		OEB2=>'1', -- output enable, active low
 		CSB1=> rsel_blk, -- chip select, active low
 		CSB2=> wsel_blk, -- chip select, active low
