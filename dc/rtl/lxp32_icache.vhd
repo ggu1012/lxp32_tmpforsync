@@ -77,8 +77,10 @@ signal hitc: std_logic;
 signal hitp: std_logic;
 signal miss: std_logic:='0';
 
-signal rsel_blk: std_logic;
-signal wsel_blk: std_logic;
+signal rsel_oneblk: std_logic;
+signal wsel_oneblk: std_logic;
+signal rsel_twoblk: std_logic;
+signal wsel_twoblk: std_logic;
 
 begin
 
@@ -117,9 +119,10 @@ ram_re<= not (lli_re_i or miss); -- low active
 -- channel 1 for only read
 -- channel 2 for only write
 
-rsel_blk <= ram_raddr(0);
-wsel_blk <= ram_waddr(0);
-
+rsel_oneblk <= ram_raddr(0);
+wsel_oneblk <= ram_waddr(0);
+rsel_twoblk <= not ram_raddr(0);
+wsel_twoblk <= not ram_waddr(0);
 
 
 sram_inst1: entity work.lxp32_ram128x32(rtl)
