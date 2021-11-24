@@ -133,8 +133,8 @@ sram_inst1: entity work.lxp32_ram128x32(rtl)
 		WEB2 => ram_we, -- write enable, active low
 		OEB1=> ram_re, -- output enable, active low
 		OEB2=>'1', -- output enable, active low
-		CSB1=>rsel_blk, -- chip select, active low
-		CSB2=>wsel_blk, -- chip select, active low
+		CSB1=>rsel_oneblk, -- chip select, active low
+		CSB2=>wsel_oneblk, -- chip select, active low
 
 		A1=> std_logic_vector(ram_raddr(7 downto 1)), -- R/W address
 		A2=> std_logic_vector(ram_waddr(7 downto 1)), -- R/W address
@@ -152,8 +152,8 @@ sram_inst2: entity work.lxp32_ram128x32(rtl)
 		WEB2 => ram_we, -- write enable, active low
 		OEB1=> ram_re, -- output disable
 		OEB2=>'1', -- output enable, active low
-		CSB1=> rsel_blk, -- chip select, active low
-		CSB2=> wsel_blk, -- chip select, active low
+		CSB1=> rsel_twoblk, -- chip select, active low
+		CSB2=> wsel_twoblk, -- chip select, active low
 
 		A1=> std_logic_vector(ram_raddr(7 downto 1)), -- R/W address
 		A2=> std_logic_vector(ram_waddr(7 downto 1)), -- R/W address
