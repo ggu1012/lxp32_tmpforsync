@@ -48,8 +48,6 @@ signal ram_raddr: std_logic_vector(7 downto 0);
 signal ram_re: std_logic;
 signal ram_we: std_logic;
 
-signal ram_ce: std_logic; -- ADDED FOR SAED32
-
 signal read_base: unsigned(21 downto 0);
 signal read_offset: unsigned(7 downto 0);
 
@@ -77,10 +75,14 @@ signal hitc: std_logic;
 signal hitp: std_logic;
 signal miss: std_logic:='0';
 
-signal rsel_oneblk: std_logic;
-signal wsel_oneblk: std_logic;
-signal rsel_twoblk: std_logic;
-signal wsel_twoblk: std_logic;
+signal web1: std_logic; -- 1 : read, 0 : write
+signal oeb1: std_logic;
+signal web2: std_logic;
+signal oeb2: std_logic;
+signal csb1_oneblk: std_logic;
+signal csb2_oneblk: std_logic;
+signal csb1_twoblk: std_logic;
+signal csb2_twoblk: std_logic;
 
 begin
 
@@ -119,22 +121,27 @@ ram_re<= not (lli_re_i or miss); -- low active
 -- channel 1 for only read
 -- channel 2 for only write
 
-rsel_oneblk <= ram_raddr(0);
-wsel_oneblk <= ram_waddr(0);
-rsel_twoblk <= not ram_raddr(0);
-wsel_twoblk <= not ram_waddr(0);
+web1 <= not ram_re; -- 1 : read, 0 : write
+oeb1 <= ram_re;
+web2 <= ram_we;
+oeb2 <= '1';
+csb1_oneblk <= ram_re and ram_raddr(0);
+csb2_oneblk <= ram_we and ram_waddr(0);
+csb1_twoblk <= ram_re and ram_raddr(1);
+csb2_twoblk <= ram_we and ram_waddr(1);
+
 
 
 sram_inst1: entity work.lxp32_ram128x32(rtl)
 	port map(
 		CE1 => clk_i, -- clk
 		CE2 => clk_i, -- clk
-		WEB1 => '1', -- write enable, active low
+		WEB1 => web1, -- write enable, active low
 		WEB2 => ram_we, -- write enable, active low
-		OEB1=> ram_re, -- output enable, active low
-		OEB2=>'1', -- output enable, active low
-		CSB1=>rsel_oneblk, -- chip select, active low
-		CSB2=>wsel_oneblk, -- chip select, active low
+		OEB1=> oeb1, -- output enable, active low
+		OEB2=> oeb1, -- output enable, active low
+		CSB1=>csb1_oneblk, -- chip select, active low
+		CSB2=>csb2_oneblk, -- chip select, active low
 
 		A1=> std_logic_vector(ram_raddr(7 downto 1)), -- R/W address
 		A2=> std_logic_vector(ram_waddr(7 downto 1)), -- R/W address
@@ -148,12 +155,12 @@ sram_inst2: entity work.lxp32_ram128x32(rtl)
 	port map(
 		CE1 => clk_i, -- clk
 		CE2 => clk_i, -- clk
-		WEB1 => '1', -- write disable
+		WEB1 => web1, -- write enable, active low
 		WEB2 => ram_we, -- write enable, active low
-		OEB1=> ram_re, -- output disable
-		OEB2=>'1', -- output enable, active low
-		CSB1=> rsel_twoblk, -- chip select, active low
-		CSB2=> wsel_twoblk, -- chip select, active low
+		OEB1=> oeb1, -- output enable, active low
+		OEB2=> oeb1, -- output enable, active low
+		CSB1=>csb1_twoblk, -- chip select, active low
+		CSB2=>csb2_twoblk, -- chip select, active low
 
 		A1=> std_logic_vector(ram_raddr(7 downto 1)), -- R/W address
 		A2=> std_logic_vector(ram_waddr(7 downto 1)), -- R/W address
