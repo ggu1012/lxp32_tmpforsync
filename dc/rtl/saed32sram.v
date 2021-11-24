@@ -105,8 +105,8 @@ and u3 (RE2, ~CSB2_i,  WEB2_i);
 and u4 (WE2, ~CSB2_i, ~WEB2_i);
 
 initial begin
-	data_out1 = 32'hX;
-	data_out2 = 32'hX;
+	data_out1 = 32'd200;
+	data_out2 = 32'd200;
 end
 
 //Primary ports
