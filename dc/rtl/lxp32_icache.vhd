@@ -125,10 +125,10 @@ web1 <= not ram_re; -- 1 : read, 0 : write
 oeb1 <= ram_re;
 web2 <= ram_we;
 oeb2 <= '1';
-csb1_oneblk <= ram_re and ram_raddr(0);
-csb2_oneblk <= ram_we and ram_waddr(0);
-csb1_twoblk <= ram_re and ram_raddr(1);
-csb2_twoblk <= ram_we and ram_waddr(1);
+csb1_oneblk <= (ram_re or ram_raddr(0));
+csb2_oneblk <= (ram_we or ram_waddr(0));
+csb1_twoblk <= (ram_re or (not ram_raddr(0)));
+csb2_twoblk <= (ram_we or (not ram_waddr(0)));
 
 
 
