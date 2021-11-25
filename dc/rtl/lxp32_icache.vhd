@@ -115,20 +115,20 @@ read_offset<=unsigned(lli_adr_mux(7 downto 0));
 
 ram_waddr<=std_logic_vector(current_offset);
 ram_raddr<=std_logic_vector(read_offset);
-ram_we<= not (wb_stb and wbm_ack_i); -- low active
-ram_re<= not (lli_re_i or miss); -- low active
+ram_we<= wb_stb and wbm_ack_i; -- low active
+ram_re<= lli_re_i or miss; -- low active
 
 -- channel 1 for only read
 -- channel 2 for only write
 
-web1 <= not ram_re; -- 1 : read, 0 : write
-oeb1 <= ram_re;
-web2 <= ram_we;
+web1 <= ram_re; -- 1 : read, 0 : write
+oeb1 <= not ram_re;
+web2 <= not ram_we;
 oeb2 <= '1';
-csb1_oneblk <= (ram_re or ram_raddr(0));
-csb2_oneblk <= (ram_we or ram_waddr(0));
-csb1_twoblk <= (ram_re or (not ram_raddr(0)));
-csb2_twoblk <= (ram_we or (not ram_waddr(0)));
+csb1_oneblk <= ((not ram_re) or ram_raddr(0));
+csb2_oneblk <= ((not ram_we) or ram_waddr(0));
+csb1_twoblk <= not (ram_re and ram_raddr(0));
+csb2_twoblk <= not (ram_we and ram_waddr(0));
 
 
 
@@ -137,7 +137,7 @@ sram_inst1: entity work.lxp32_ram128x32(rtl)
 		CE1 => clk_i, -- clk
 		CE2 => clk_i, -- clk
 		WEB1 => web1, -- write enable, active low
-		WEB2 => ram_we, -- write enable, active low
+		WEB2 => web2, -- write enable, active low
 		OEB1=> oeb1, -- output enable, active low
 		OEB2=> oeb1, -- output enable, active low
 		CSB1=>csb1_oneblk, -- chip select, active low
@@ -156,11 +156,11 @@ sram_inst2: entity work.lxp32_ram128x32(rtl)
 		CE1 => clk_i, -- clk
 		CE2 => clk_i, -- clk
 		WEB1 => web1, -- write enable, active low
-		WEB2 => ram_we, -- write enable, active low
+		WEB2 => web2, -- write enable, active low
 		OEB1=> oeb1, -- output enable, active low
 		OEB2=> oeb1, -- output enable, active low
-		CSB1=>csb1_twoblk, -- chip select, active low
-		CSB2=>csb2_twoblk, -- chip select, active low
+		CSB1=> csb1_twoblk, -- chip select, active low
+		CSB2=> csb2_twoblk, -- chip select, active low
 
 		A1=> std_logic_vector(ram_raddr(7 downto 1)), -- R/W address
 		A2=> std_logic_vector(ram_waddr(7 downto 1)), -- R/W address
