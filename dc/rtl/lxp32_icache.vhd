@@ -84,6 +84,10 @@ signal csb2_oneblk: std_logic;
 signal csb1_twoblk: std_logic;
 signal csb2_twoblk: std_logic;
 
+signal out_1: std_logic_vector(31 downto 0);
+signal out_2: std_logic_vector(31 downto 0);
+signal dummy_bus: std_logic_vector(31 downto 0);
+
 begin
 
 assert PREFETCH_SIZE>=4
@@ -139,7 +143,7 @@ sram_inst1: entity work.lxp32_ram128x32(rtl)
 		WEB1 => web1, -- write enable, active low
 		WEB2 => web2, -- write enable, active low
 		OEB1=> oeb1, -- output enable, active low
-		OEB2=> oeb1, -- output enable, active low
+		OEB2=> oeb2, -- output enable, active low
 		CSB1=>csb1_oneblk, -- chip select, active low
 		CSB2=>csb2_oneblk, -- chip select, active low
 
@@ -147,8 +151,8 @@ sram_inst1: entity work.lxp32_ram128x32(rtl)
 		A2=> std_logic_vector(ram_waddr(7 downto 1)), -- R/W address
 		I1=>wbm_dat_i, -- input data bus
 		I2=>wbm_dat_i, -- input data bus
-		O1=>lli_dat_o, -- output data bus
-		O2=>lli_dat_o  -- output data bus
+		O1=>out_1, -- output data bus
+		O2=>dummy_bus  -- output data bus
 	);
 
 sram_inst2: entity work.lxp32_ram128x32(rtl)
@@ -158,7 +162,7 @@ sram_inst2: entity work.lxp32_ram128x32(rtl)
 		WEB1 => web1, -- write enable, active low
 		WEB2 => web2, -- write enable, active low
 		OEB1=> oeb1, -- output enable, active low
-		OEB2=> oeb1, -- output enable, active low
+		OEB2=> oeb2, -- output enable, active low
 		CSB1=> csb1_twoblk, -- chip select, active low
 		CSB2=> csb2_twoblk, -- chip select, active low
 
@@ -166,9 +170,11 @@ sram_inst2: entity work.lxp32_ram128x32(rtl)
 		A2=> std_logic_vector(ram_waddr(7 downto 1)), -- R/W address
 		I1=>wbm_dat_i, -- input data bus
 		I2=>wbm_dat_i, -- input data bus
-		O1=>lli_dat_o, -- output data bus
-		O2=>lli_dat_o  -- output data bus
+		O1=>out_2, -- output data bus
+		O2=>dummy_bus  -- output data bus
 	);
+
+lli_dat_o <= out_1 when ram_raddr(0) = '1' else out_2;
 
 -- Determine hit/miss
 

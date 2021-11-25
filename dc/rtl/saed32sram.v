@@ -45,6 +45,10 @@ wire 				RE2;
 wire 				WE1;	
 wire 				WE2;
 
+always@(posedge CE1) begin
+	$display("new one");
+end
+
 SRAM2RW128x32_1bit sram_IO0 ( CE1, CE2, WEB1, WEB2,  A1, A2, OEB1, OEB2, CSB1, CSB2, I1[0], I2[0], O1[0], O2[0]);
 SRAM2RW128x32_1bit sram_IO1 ( CE1, CE2, WEB1, WEB2,  A1, A2, OEB1, OEB2, CSB1, CSB2, I1[1], I2[1], O1[1], O2[1]);
 SRAM2RW128x32_1bit sram_IO2 ( CE1, CE2, WEB1, WEB2,  A1, A2, OEB1, OEB2, CSB1, CSB2, I1[2], I2[2], O1[2], O2[2]);
@@ -78,6 +82,13 @@ SRAM2RW128x32_1bit sram_IO29 ( CE1, CE2, WEB1, WEB2,  A1, A2, OEB1, OEB2, CSB1, 
 SRAM2RW128x32_1bit sram_IO30 ( CE1, CE2, WEB1, WEB2,  A1, A2, OEB1, OEB2, CSB1, CSB2, I1[30], I2[30], O1[30], O2[30]);
 SRAM2RW128x32_1bit sram_IO31 ( CE1, CE2, WEB1, WEB2,  A1, A2, OEB1, OEB2, CSB1, CSB2, I1[31], I2[31], O1[31], O2[31]);
 
+always@(O1) begin
+	$display("O1: %b", O1);
+end
+
+always@(O2) begin
+	$display("O2: %b", O2);
+end
 
 endmodule
 
@@ -107,8 +118,14 @@ and u4 (WE2, ~CSB2_i, ~WEB2_i);
 //Primary ports
 
 always @ (posedge CE1_i) 
-	if (RE1)
-		data_out1 = memory[A1_i];
+	if (RE1) begin
+		if (^A1_i === 1'bx)
+			data_out1 = 1'bx;
+		else
+			data_out1 = memory[A1_i];
+
+		$display("read primary port %d => %d", data_out1, memory[A1_i]);
+	end
 always @ (posedge CE1_i) 
 	if (WE1)
 		memory[A1_i] = I1_i;

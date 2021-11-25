@@ -67,15 +67,4 @@ begin
             O2=>O2
         );
 
-    process (CE1) is
-        begin
-            if rising_edge(CE1) then
-                if WEB1 = '1' then
-                    if is_x(A1) then -- to avoid numeric_std warnings during simulation
-                        O1<=(others=>'X');
-                    end if;
-                end if;
-            end if;
-        end process;
-    
 end rtl ; -- rtl
