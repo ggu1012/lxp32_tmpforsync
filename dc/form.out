@@ -42,17 +42,18 @@ set sram $rtl_dir/saed32sram.v
 analyze -f verilog $sram -lib work
 Running PRESTO HDLC
 Compiling source file /home/under_ksh/lxp32_project/dc/rtl/saed32sram.v
-Warning:  /home/under_ksh/lxp32_project/dc/rtl/saed32sram.v:102: the undeclared symbol 'RE1' assumed to have the default net type, which is 'wire'. (VER-936)
-Warning:  /home/under_ksh/lxp32_project/dc/rtl/saed32sram.v:103: the undeclared symbol 'WE1' assumed to have the default net type, which is 'wire'. (VER-936)
-Warning:  /home/under_ksh/lxp32_project/dc/rtl/saed32sram.v:104: the undeclared symbol 'RE2' assumed to have the default net type, which is 'wire'. (VER-936)
-Warning:  /home/under_ksh/lxp32_project/dc/rtl/saed32sram.v:105: the undeclared symbol 'WE2' assumed to have the default net type, which is 'wire'. (VER-936)
-Presto compilation completed successfully.
+Warning:  /home/under_ksh/lxp32_project/dc/rtl/saed32sram.v:113: the undeclared symbol 'RE1' assumed to have the default net type, which is 'wire'. (VER-936)
+Warning:  /home/under_ksh/lxp32_project/dc/rtl/saed32sram.v:114: the undeclared symbol 'WE1' assumed to have the default net type, which is 'wire'. (VER-936)
+Warning:  /home/under_ksh/lxp32_project/dc/rtl/saed32sram.v:115: the undeclared symbol 'RE2' assumed to have the default net type, which is 'wire'. (VER-936)
+Warning:  /home/under_ksh/lxp32_project/dc/rtl/saed32sram.v:116: the undeclared symbol 'WE2' assumed to have the default net type, which is 'wire'. (VER-936)
+Error:  /home/under_ksh/lxp32_project/dc/rtl/saed32sram.v:122: case equality (===) is not supported by synthesis. (VER-189)
+*** Presto compilation terminated with 1 errors. ***
 Loading db file '/home/espanol/libraries/PDKS/SAED32_EDK_12162019/lib/sram/db_nldm/saed32sram_ss0p95v125c.db'
 Loading db file '/home/espanol/libraries/PDKS/SAED32_EDK_12162019/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95v125c.db'
 Loading db file '/home/espanol/libraries/PDKS/SAED32_EDK_12162019/lib/pll/db_nldm/saed32pll_ss0p95v125c_2p25v.db'
 Loading db file '/home/espanol/libraries/PDKS/SAED32_EDK_12162019/lib/io_std/db_nldm/saed32io_fc_ss0p95v125c_2p25v.db'
 Loading db file '/usr/synopsys/SYN/libraries/syn/dw_foundation.sldb'
-1
+0
 analyze -format vhdl $SOURCE_FILES -library work
 Running PRESTO HDLC
 -- Compiling Source File /home/under_ksh/lxp32_project/dc/rtl/lxp32_alu.vhd
@@ -135,9 +136,6 @@ Warning:  /home/under_ksh/lxp32_project/dc/rtl/lxp32c_top.vhd:62: The architectu
 Compiling Entity Declaration LXP32_ICACHE
 Compiling Architecture RTL of LXP32_ICACHE
 Warning:  /home/under_ksh/lxp32_project/dc/rtl/lxp32_icache.vhd:41: The architecture rtl has already been analyzed. It is being replaced. (VHD-4)
-[Failure] WORK.RTL/LXP32_ALU is obsolete (used WORK.LXP32_MUL_OPT is more recent)
-[Failure] WORK.RTL/LXP32_ALU is obsolete (used WORK.LXP32_DIVIDER is more recent)
-[Failure] WORK.RTL/LXP32_CPU is obsolete (used WORK.LXP32_INTERRUPT_MUX is more recent)
 Presto compilation completed successfully.
 1
 # top module name을 elaborate 뒤에 작성
@@ -158,20 +156,116 @@ Information: Building the design 'lxp32_cpu' instantiated from design 'lxp32c_to
 Presto compilation completed successfully.
 Information: Building the design 'lxp32_icache' instantiated from design 'lxp32c_top' with
 	the parameters "BURST_SIZE=16,PREFETCH_SIZE=32". (HDL-193)
-Warning:  /home/under_ksh/lxp32_project/dc/rtl/lxp32_icache.vhd:56: The initial value for signal 'init' is not supported for synthesis. Presto ignores it.  (ELAB-130)
-Warning:  /home/under_ksh/lxp32_project/dc/rtl/lxp32_icache.vhd:59: The initial value for signal 'near_miss' is not supported for synthesis. Presto ignores it.  (ELAB-130)
-Warning:  /home/under_ksh/lxp32_project/dc/rtl/lxp32_icache.vhd:61: The initial value for signal 'wrap_cnt' is not supported for synthesis. Presto ignores it.  (ELAB-130)
-Warning:  /home/under_ksh/lxp32_project/dc/rtl/lxp32_icache.vhd:62: The initial value for signal 'burst_cnt' is not supported for synthesis. Presto ignores it.  (ELAB-130)
-Warning:  /home/under_ksh/lxp32_project/dc/rtl/lxp32_icache.vhd:63: The initial value for signal 'wb_stb' is not supported for synthesis. Presto ignores it.  (ELAB-130)
-Warning:  /home/under_ksh/lxp32_project/dc/rtl/lxp32_icache.vhd:70: The initial value for signal 'current_base' is not supported for synthesis. Presto ignores it.  (ELAB-130)
-Warning:  /home/under_ksh/lxp32_project/dc/rtl/lxp32_icache.vhd:71: The initial value for signal 'current_offset' is not supported for synthesis. Presto ignores it.  (ELAB-130)
-Warning:  /home/under_ksh/lxp32_project/dc/rtl/lxp32_icache.vhd:72: The initial value for signal 'prev_base' is not supported for synthesis. Presto ignores it.  (ELAB-130)
-Warning:  /home/under_ksh/lxp32_project/dc/rtl/lxp32_icache.vhd:73: The initial value for signal 'next_base' is not supported for synthesis. Presto ignores it.  (ELAB-130)
-Warning:  /home/under_ksh/lxp32_project/dc/rtl/lxp32_icache.vhd:74: The initial value for signal 'start_offset' is not supported for synthesis. Presto ignores it.  (ELAB-130)
-Warning:  /home/under_ksh/lxp32_project/dc/rtl/lxp32_icache.vhd:78: The initial value for signal 'miss' is not supported for synthesis. Presto ignores it.  (ELAB-130)
+Warning:  /home/under_ksh/lxp32_project/dc/rtl/lxp32_icache.vhd:54: The initial value for signal 'init' is not supported for synthesis. Presto ignores it.  (ELAB-130)
+Warning:  /home/under_ksh/lxp32_project/dc/rtl/lxp32_icache.vhd:57: The initial value for signal 'near_miss' is not supported for synthesis. Presto ignores it.  (ELAB-130)
+Warning:  /home/under_ksh/lxp32_project/dc/rtl/lxp32_icache.vhd:59: The initial value for signal 'wrap_cnt' is not supported for synthesis. Presto ignores it.  (ELAB-130)
+Warning:  /home/under_ksh/lxp32_project/dc/rtl/lxp32_icache.vhd:60: The initial value for signal 'burst_cnt' is not supported for synthesis. Presto ignores it.  (ELAB-130)
+Warning:  /home/under_ksh/lxp32_project/dc/rtl/lxp32_icache.vhd:61: The initial value for signal 'wb_stb' is not supported for synthesis. Presto ignores it.  (ELAB-130)
+Warning:  /home/under_ksh/lxp32_project/dc/rtl/lxp32_icache.vhd:68: The initial value for signal 'current_base' is not supported for synthesis. Presto ignores it.  (ELAB-130)
+Warning:  /home/under_ksh/lxp32_project/dc/rtl/lxp32_icache.vhd:69: The initial value for signal 'current_offset' is not supported for synthesis. Presto ignores it.  (ELAB-130)
+Warning:  /home/under_ksh/lxp32_project/dc/rtl/lxp32_icache.vhd:70: The initial value for signal 'prev_base' is not supported for synthesis. Presto ignores it.  (ELAB-130)
+Warning:  /home/under_ksh/lxp32_project/dc/rtl/lxp32_icache.vhd:71: The initial value for signal 'next_base' is not supported for synthesis. Presto ignores it.  (ELAB-130)
+Warning:  /home/under_ksh/lxp32_project/dc/rtl/lxp32_icache.vhd:72: The initial value for signal 'start_offset' is not supported for synthesis. Presto ignores it.  (ELAB-130)
+Warning:  /home/under_ksh/lxp32_project/dc/rtl/lxp32_icache.vhd:76: The initial value for signal 'miss' is not supported for synthesis. Presto ignores it.  (ELAB-130)
+Information:  Presto preserved an unloaded net 'dummy_bus[0]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[1]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[2]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[3]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[4]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[5]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[6]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[7]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[8]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[9]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[10]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[11]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[12]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[13]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[14]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[15]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[16]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[17]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[18]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[19]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[20]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[21]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[22]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[23]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[24]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[25]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[26]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[27]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[28]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[29]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[30]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[31]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[0]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[1]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[2]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[3]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[4]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[5]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[6]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[7]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[8]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[9]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[10]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[11]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[12]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[13]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[14]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[15]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[16]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[17]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[18]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[19]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[20]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[21]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[22]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[23]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[24]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[25]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[26]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[27]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[28]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[29]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[30]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[31]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[0]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[1]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[2]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[3]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[4]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[5]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[6]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[7]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[8]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[9]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[10]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[11]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[12]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[13]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[14]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[15]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[16]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[17]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[18]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[19]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[20]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[21]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[22]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[23]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[24]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[25]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[26]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[27]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[28]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[29]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[30]'. (ELAB-510)
+Information:  Presto preserved an unloaded net 'dummy_bus[31]'. (ELAB-510)
 
 Inferred memory devices in process
-	in routine lxp32_icache_BURST_SIZE16_PREFETCH_SIZE32 line 96 in file
+	in routine lxp32_icache_BURST_SIZE16_PREFETCH_SIZE32 line 104 in file
 		'/home/under_ksh/lxp32_project/dc/rtl/lxp32_icache.vhd'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -180,7 +274,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine lxp32_icache_BURST_SIZE16_PREFETCH_SIZE32 line 178 in file
+	in routine lxp32_icache_BURST_SIZE16_PREFETCH_SIZE32 line 194 in file
 		'/home/under_ksh/lxp32_project/dc/rtl/lxp32_icache.vhd'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -189,7 +283,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine lxp32_icache_BURST_SIZE16_PREFETCH_SIZE32 line 197 in file
+	in routine lxp32_icache_BURST_SIZE16_PREFETCH_SIZE32 line 213 in file
 		'/home/under_ksh/lxp32_project/dc/rtl/lxp32_icache.vhd'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -198,7 +292,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine lxp32_icache_BURST_SIZE16_PREFETCH_SIZE32 line 217 in file
+	in routine lxp32_icache_BURST_SIZE16_PREFETCH_SIZE32 line 233 in file
 		'/home/under_ksh/lxp32_project/dc/rtl/lxp32_icache.vhd'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -207,7 +301,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine lxp32_icache_BURST_SIZE16_PREFETCH_SIZE32 line 236 in file
+	in routine lxp32_icache_BURST_SIZE16_PREFETCH_SIZE32 line 252 in file
 		'/home/under_ksh/lxp32_project/dc/rtl/lxp32_icache.vhd'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -627,8 +721,7 @@ create_clock clk_i -period 2
 # compile
 compile_ultra
 Information: Performing power optimization. (PWR-850)
-Analyzing: "/home/espanol/libraries/PDKS/SAED32_EDK_12162019/lib/sram/db_nldm/saed32sram_ss0p95v125c.db"
-Library analysis succeeded.
+Alib files are up-to-date.
 Information: Running optimization using a maximum of 16 cores. (OPT-1500)
 Information: Evaluating DesignWare library utilization. (UISN-27)
 
@@ -641,7 +734,7 @@ Information: Evaluating DesignWare library utilization. (UISN-27)
 
 Information: Sequential output inversion is enabled.  SVF file must be used for formal verification. (OPT-1208)
 
-Information: There are 170 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+Information: There are 134 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
 
 Information: Uniquified 2 instances of design 'lxp32_ram128x32'. (OPT-1056)
 Information: Uniquified 2 instances of design 'lxp32_ram256x32'. (OPT-1056)
@@ -678,18 +771,18 @@ Information: State dependent leakage is now switched from on to off.
   ------------------------
 .
   Processing 'lxp32_ram256x32_0'
-  Processing 'lxp32c_top'
-Information: Added key list 'DesignWare' to design 'lxp32c_top'. (DDB-72)
-Information: The register 'icache_inst/wb_cti_reg[1]' is a constant and will be removed. (OPT-1206)
- Implement Synthetic for 'lxp32c_top'.
-  Processing 'lxp32_execute_0_1_dsp'
+  Processing 'lxp32_cpu_0_1_dsp_00000000'
+ Implement Synthetic for 'lxp32_cpu_0_1_dsp_00000000'.
   Processing 'lxp32_scratchpad'
 Information: Added key list 'DesignWare' to design 'lxp32_scratchpad'. (DDB-72)
   Processing 'lxp32_alu_1_dsp'
 Information: Added key list 'DesignWare' to design 'lxp32_alu_1_dsp'. (DDB-72)
  Implement Synthetic for 'lxp32_alu_1_dsp'.
-  Processing 'lxp32_cpu_0_1_dsp_00000000'
- Implement Synthetic for 'lxp32_cpu_0_1_dsp_00000000'.
+  Processing 'lxp32c_top'
+Information: Added key list 'DesignWare' to design 'lxp32c_top'. (DDB-72)
+Information: The register 'icache_inst/wb_cti_reg[1]' is a constant and will be removed. (OPT-1206)
+ Implement Synthetic for 'lxp32c_top'.
+  Processing 'lxp32_execute_0_1_dsp'
 
   Updating timing information
 Information: Updating design information... (UID-85)
@@ -785,38 +878,38 @@ Threshold voltage group cell usage:
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:03:57  260076.4      0.85    3705.1      27.5                           4210547968.0000
-    0:04:48  260460.4      0.50    3884.8      30.6                           4211652096.0000
-    0:04:48  260460.4      0.50    3884.8      30.6                           4211652096.0000
-    0:04:54  260458.9      0.50    3884.9      40.0                           4211660800.0000
+    0:04:06  260109.5      0.85    3704.9      28.2                           4210569728.0000
+    0:04:57  260493.5      0.50    3884.7      31.2                           4211673856.0000
+    0:04:57  260493.5      0.50    3884.7      31.2                           4211673856.0000
+    0:05:04  260494.2      0.50    3884.7      31.2                           4211749632.0000
 
 Threshold voltage group cell usage:
 >> saed32cell_hvt 100.00%, saed32cell_svt 0.00%
 
   Beginning WLM Backend Optimization
   --------------------------------------
-    0:05:19  259582.4      0.49    3905.6      39.1                           4182604032.0000
-    0:05:27  258385.1      0.49    3924.3      39.1                           4150742784.0000
-    0:05:32  258299.2      0.49    3923.6      39.1                           4147443712.0000
-    0:05:37  258150.5      0.49    3824.7      38.3                           4120706304.0000
-    0:05:37  258150.5      0.49    3824.7      38.3                           4120706304.0000
-    0:05:40  258165.5      0.50    3827.6      38.3                           4121309184.0000
-    0:05:40  258165.5      0.50    3827.6      38.3                           4121309184.0000
-    0:05:40  258165.5      0.50    3827.6      38.3                           4121309184.0000
-    0:05:40  258165.5      0.50    3827.6      38.3                           4121309184.0000
-    0:05:41  258165.5      0.50    3827.6      38.3                           4121309184.0000
-    0:05:41  258165.5      0.50    3827.6      38.3                           4121309184.0000
-    0:05:56  258188.9      0.47    3977.8      37.6                           4121668096.0000
-    0:05:56  258188.9      0.47    3977.8      37.6                           4121668096.0000
-    0:05:57  258189.4      0.47    3977.8      37.6                           4121674752.0000
-    0:05:57  258189.4      0.47    3977.8      37.6                           4121674752.0000
-    0:05:58  258197.3      0.47    3977.8      37.6                           4121824000.0000
-    0:05:58  258197.3      0.47    3977.8      37.6                           4121824000.0000
-    0:06:00  258197.3      0.47    3977.8      37.6                           4121824000.0000
-    0:06:00  258197.3      0.47    3977.8      37.6                           4121824000.0000
-    0:06:00  258197.3      0.47    3977.8      37.6                           4121824000.0000
-    0:06:00  258197.3      0.47    3977.8      37.6                           4121824000.0000
-    0:06:02  258197.3      0.47    3977.8      37.6                           4121824000.0000
+    0:05:30  259539.2      0.49    3910.9      30.4                           4181800192.0000
+    0:05:41  258278.1      0.49    3931.7      30.4                           4147088640.0000
+    0:05:47  258162.5      0.49    3926.7      30.4                           4143359744.0000
+    0:05:52  257996.8      0.49    3823.0      28.9                           4115363072.0000
+    0:05:52  257996.8      0.49    3823.0      28.9                           4115363072.0000
+    0:05:55  258019.6      0.49    3822.8      28.9                           4116034048.0000
+    0:05:55  258019.6      0.49    3822.8      28.9                           4116034048.0000
+    0:05:55  258019.6      0.49    3822.8      28.9                           4116034048.0000
+    0:05:55  258019.6      0.49    3822.8      28.9                           4116034048.0000
+    0:05:55  258019.6      0.49    3822.8      28.9                           4116034048.0000
+    0:05:55  258019.6      0.49    3822.8      28.9                           4116034048.0000
+    0:06:09  258065.6      0.47    4544.0      30.0                           4116522240.0000
+    0:06:09  258065.6      0.47    4544.0      30.0                           4116522240.0000
+    0:06:11  258065.6      0.47    4544.0      30.0                           4116542464.0000
+    0:06:11  258065.6      0.47    4544.0      30.0                           4116542464.0000
+    0:06:16  258073.5      0.47    4565.5      30.0                           4116988160.0000
+    0:06:16  258073.5      0.47    4565.5      30.0                           4116988160.0000
+    0:06:16  258073.3      0.47    4565.6      30.0                           4116973312.0000
+    0:06:16  258073.3      0.47    4565.6      30.0                           4116973312.0000
+    0:06:17  258073.3      0.47    4565.5      30.0                           4116973312.0000
+    0:06:17  258073.3      0.47    4565.5      30.0                           4116973312.0000
+    0:06:19  258073.3      0.47    4565.5      30.0                           4116973312.0000
 
 
   Beginning Design Rule Fixing  (max_transition)  (max_capacitance)
@@ -826,12 +919,12 @@ Threshold voltage group cell usage:
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:06:02  258197.3      0.47    3977.8      37.6                           4121824000.0000
+    0:06:19  258073.3      0.47    4565.5      30.0                           4116973312.0000
   Global Optimization (Phase 32)
   Global Optimization (Phase 33)
   Global Optimization (Phase 34)
-    0:06:15  258275.3      0.46    3920.9       0.0                           4125051648.0000
-    0:06:16  258278.4      0.46    3920.7       0.5                           4124817664.0000
+    0:06:33  258157.1      0.46    4511.7       0.0                           4120750592.0000
+    0:06:35  258156.9      0.46    4511.7       0.0                           4120697600.0000
 
 Threshold voltage group cell usage:
 >> saed32cell_hvt 100.00%, saed32cell_svt 0.00%
@@ -844,7 +937,7 @@ Threshold voltage group cell usage:
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:06:16  258278.4      0.46    3920.7       0.5                           4124817664.0000
+    0:06:35  258156.9      0.46    4511.7       0.0                           4120697600.0000
   Global Optimization (Phase 35)
   Global Optimization (Phase 36)
   Global Optimization (Phase 37)
@@ -861,52 +954,56 @@ Threshold voltage group cell usage:
   Global Optimization (Phase 48)
   Global Optimization (Phase 49)
   Global Optimization (Phase 50)
-Information: Complementing port 'cmd_negate_op2_i' in design 'lxp32_execute_0_1_dsp'.
-	 The new name of the port is 'cmd_negate_op2_i_BAR'. (OPT-319)
-    0:06:53  255902.6      0.50    4337.1       9.3 cpu_inst/execute_inst/alu_inst/mul_inst/mul00_inst/p_o_reg[20]/D 4045006848.0000
-    0:06:57  255904.1      0.49    4280.6       9.3                           4045092864.0000
-    0:07:03  255973.8      0.48    4071.5       9.9                           4046754816.0000
-    0:07:03  255973.8      0.48    4071.5       9.9                           4046754816.0000
-    0:07:08  256009.9      0.48    3977.1       2.3                           4048629504.0000
-    0:07:09  256009.9      0.48    3977.1       2.3                           4048629504.0000
-    0:07:12  256079.0      0.48    4126.6       2.3                           4051265024.0000
-    0:07:12  256079.0      0.48    4126.6       2.3                           4051265024.0000
-    0:07:12  256079.0      0.48    4126.6       2.3                           4051265024.0000
-    0:07:12  256079.0      0.48    4126.6       2.3                           4051265024.0000
-    0:07:13  256079.0      0.48    4126.6       2.3                           4051265024.0000
-    0:07:13  256079.0      0.48    4126.6       2.3                           4051265024.0000
-    0:07:19  256120.7      0.47    4076.6      14.6                           4053277440.0000
-    0:07:19  256120.7      0.47    4076.6      14.6                           4053277440.0000
-    0:07:23  256112.8      0.47    4086.7      17.3                           4052802048.0000
-    0:07:23  256112.8      0.47    4086.7      17.3                           4052802048.0000
-    0:07:26  256130.8      0.46    4086.4      17.3                           4053377024.0000
-    0:07:26  256130.8      0.46    4086.4      17.3                           4053377024.0000
-    0:07:29  256172.3      0.45    4093.0      17.4                           4054600192.0000
-    0:07:29  256172.3      0.45    4093.0      17.4                           4054600192.0000
-    0:07:36  256209.6      0.44    3952.3      14.6                           4056072448.0000
-    0:07:36  256209.6      0.44    3952.3      14.6                           4056072448.0000
-    0:07:38  256217.0      0.44    3952.4      14.6                           4056338176.0000
+    0:07:01  256017.7      0.49    4238.1       0.0 cpu_inst/execute_inst/alu_inst/mul_inst/mul00_inst/p_o_reg[28]/D 4050128384.0000
+    0:07:16  256036.5      0.48    4100.1       0.0                           4050425088.0000
+    0:07:21  256080.0      0.48    4043.4       0.0                           4052152576.0000
+    0:07:21  256080.0      0.48    4043.4       0.0                           4052152576.0000
+    0:07:27  256117.4      0.48    3989.1       0.0                           4053342720.0000
+    0:07:27  256117.4      0.48    3989.1       0.0                           4053342720.0000
+    0:07:30  256180.6      0.48    3703.7       0.4                           4055216384.0000
+    0:07:30  256180.6      0.48    3703.7       0.4                           4055216384.0000
+    0:07:30  256180.6      0.48    3703.7       0.4                           4055228160.0000
+    0:07:30  256180.6      0.48    3703.7       0.4                           4055228160.0000
+    0:07:31  256181.2      0.48    3703.7       0.4                           4055257856.0000
+    0:07:31  256181.2      0.48    3703.7       0.4                           4055257856.0000
+    0:07:35  256220.8      0.45    3721.0       0.4                           4057352704.0000
+    0:07:35  256220.8      0.45    3721.0       0.4                           4057352704.0000
+    0:07:37  256227.2      0.45    3721.0       0.4                           4057644544.0000
+    0:07:37  256227.2      0.45    3721.0       0.4                           4057644544.0000
+    0:07:40  256229.7      0.45    3726.6       0.4                           4057960960.0000
+    0:07:40  256229.7      0.45    3726.6       0.4                           4057960960.0000
+    0:07:41  256230.5      0.45    3726.6       0.4                           4058016512.0000
+    0:07:41  256230.5      0.45    3726.6       0.4                           4058016512.0000
+    0:07:44  256255.4      0.45    3727.9       0.4                           4058339328.0000
+    0:07:44  256255.4      0.45    3727.9       0.4                           4058339328.0000
+    0:07:46  256255.6      0.45    3727.9       0.4                           4058354432.0000
 
                                   TOTAL                                                
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:07:40  256217.0      0.44    3952.4      14.6                           4056338176.0000
-    0:07:44  254415.6      0.45    3654.6      11.9                           4023281920.0000
-    0:07:51  254360.2      0.44    3656.2      11.9                           4022290176.0000
-    0:07:54  254318.5      0.44    3650.3      11.9                           4021389056.0000
-    0:07:57  254283.5      0.44    3671.1      11.9                           4020291328.0000
-    0:08:01  254256.5      0.44    3667.1      11.8                           4019957504.0000
-    0:08:01  254256.5      0.44    3667.1      11.8                           4019957504.0000
-    0:08:01  254256.5      0.44    3667.1      11.8                           4019957504.0000
-    0:08:04  254364.0      0.44    3532.9      11.8                           4026462464.0000
-    0:08:15  254353.4      0.44    3482.7       0.0 cpu_inst/execute_inst/alu_inst/mul_inst/mul00_inst/p_o_reg[19]/D 4027053056.0000
-    0:08:20  254374.2      0.44    3501.7       0.0 cpu_inst/execute_inst/alu_inst/mul_inst/mul00_inst/p_o_reg[26]/D 4027399936.0000
-    0:08:24  254392.5      0.44    3501.7       0.0                           4027504384.0000
-    0:08:28  254413.8      0.43    3443.4       0.0                           4028389376.0000
-    0:08:30  254429.3      0.43    3377.9       0.0                           4029402624.0000
-    0:08:32  254429.6      0.43    3377.9       0.0                           4029420544.0000
-    0:08:50  254368.1      0.43    3374.4       0.0                           4024806656.0000
+    0:07:48  256255.6      0.45    3727.9       0.4                           4058354432.0000
+    0:07:52  254449.7      0.46    3688.1       0.2                           4025480448.0000
+    0:08:02  254441.0      0.45    3687.0       0.2                           4026515712.0000
+    0:08:05  254406.7      0.45    3685.2       0.2                           4025978112.0000
+    0:08:09  254358.4      0.45    3678.5       0.2                           4025040384.0000
+    0:08:14  254341.4      0.45    3677.5       0.2                           4024709632.0000
+    0:08:14  254338.1      0.45    3677.4       0.2                           4024683520.0000
+    0:08:14  254338.1      0.45    3677.4       0.2                           4024683520.0000
+    0:08:18  254420.7      0.45    3583.6       0.2                           4029816320.0000
+    0:08:32  254415.6      0.44    3579.0       0.1 cpu_inst/execute_inst/alu_inst/mul_inst/mul00_inst/p_o_reg[25]/D 4030169600.0000
+    0:08:44  254476.6      0.43    3566.4       0.1 cpu_inst/execute_inst/alu_inst/mul_inst/mul00_inst/p_o_reg[25]/D 4031678976.0000
+    0:08:51  254505.1      0.43    3566.3       0.0                           4032941312.0000
+    0:08:58  254518.5      0.42    4053.5       0.0                           4033375232.0000
+    0:08:58  254518.5      0.42    4053.5       0.0                           4033375232.0000
+    0:08:59  254518.5      0.42    4053.5       0.0                           4033375232.0000
+    0:08:59  254518.5      0.42    4053.5       0.0                           4033375232.0000
+    0:09:00  254518.5      0.42    4053.5       0.0                           4033375232.0000
+    0:09:00  254518.5      0.42    4053.5       0.0                           4033375232.0000
+    0:09:01  254518.5      0.42    4053.5       0.0                           4033375232.0000
+    0:09:10  254539.1      0.42    3678.3       0.0                           4034857984.0000
+    0:09:10  254539.1      0.42    3678.3       0.0                           4034869504.0000
+    0:09:29  254442.6      0.42    3490.9       0.0                           4028459264.0000
 Loading db file '/home/espanol/libraries/PDKS/SAED32_EDK_12162019/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95v125c.db'
 Loading db file '/home/espanol/libraries/PDKS/SAED32_EDK_12162019/lib/sram/db_nldm/saed32sram_ss0p95v125c.db'
 Loading db file '/home/espanol/libraries/PDKS/SAED32_EDK_12162019/lib/pll/db_nldm/saed32pll_ss0p95v125c_2p25v.db'
@@ -941,7 +1038,7 @@ Report : timing
         -max_paths 1
 Design : lxp32c_top
 Version: N-2017.09-SP3
-Date   : Thu Nov 25 01:18:14 2021
+Date   : Thu Nov 25 21:14:16 2021
 ****************************************
 
  # A fanout number of 1000 was used for high fanout net computations.
@@ -949,9 +1046,9 @@ Date   : Thu Nov 25 01:18:14 2021
 Operating Conditions: ss0p95v125c   Library: saed32sram_ss0p95v125c
 Wire Load Model Mode: enclosed
 
-  Startpoint: cpu_inst/decode_inst/rd2_select_reg
+  Startpoint: cpu_inst/scratchpad_inst/ram2_collision_reg
               (rising edge-triggered flip-flop clocked by clk_i)
-  Endpoint: cpu_inst/execute_inst/alu_inst/mul_inst/mul00_inst/p_o_reg[21]
+  Endpoint: cpu_inst/execute_inst/alu_inst/mul_inst/mul00_inst/p_o_reg[26]
             (rising edge-triggered flip-flop clocked by clk_i)
   Path Group: clk_i
   Path Type: max
@@ -966,43 +1063,47 @@ Wire Load Model Mode: enclosed
   --------------------------------------------------------------------------
   clock clk_i (rise edge)                                 0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  cpu_inst/decode_inst/rd2_select_reg/CLK (DFFX1_HVT)     0.00 #     0.00 r
-  cpu_inst/decode_inst/rd2_select_reg/Q (DFFX1_HVT)       0.20       0.20 r
-  U506/Y (AND2X2_HVT)                                     0.12       0.32 r
-  U457/Y (AO22X1_HVT)                                     0.10       0.42 r
-  U462/Y (AO21X2_HVT)                                     0.12       0.54 r
-  cpu_inst/execute_inst/op2_i[4] (lxp32_execute_0_1_dsp)
+  cpu_inst/scratchpad_inst/ram2_collision_reg/CLK (DFFX1_HVT)
+                                                          0.00 #     0.00 r
+  cpu_inst/scratchpad_inst/ram2_collision_reg/QN (DFFX1_HVT)
+                                                          0.17       0.17 r
+  U474/Y (NBUFFX4_HVT)                                    0.08       0.25 r
+  U567/Y (AO22X1_HVT)                                     0.11       0.37 r
+  U477/Y (AO22X1_HVT)                                     0.10       0.47 r
+  U476/Y (NBUFFX8_HVT)                                    0.08       0.54 r
+  cpu_inst/execute_inst/op2_i[5] (lxp32_execute_0_1_dsp)
                                                           0.00       0.54 r
-  cpu_inst/execute_inst/U627/Y (AND2X1_HVT)               0.10       0.64 r
-  cpu_inst/execute_inst/U103/Y (XOR2X2_HVT)               0.14       0.78 f
-  cpu_inst/execute_inst/U1303/S (FADDX1_HVT)              0.20       0.98 r
-  cpu_inst/execute_inst/U1339/CO (FADDX1_HVT)             0.15       1.13 r
-  cpu_inst/execute_inst/U1343/S (FADDX1_HVT)              0.23       1.36 f
-  cpu_inst/execute_inst/U106/Y (XOR3X2_HVT)               0.25       1.62 r
-  cpu_inst/execute_inst/U125/Y (OR2X1_HVT)                0.09       1.71 r
-  cpu_inst/execute_inst/U100/Y (AND2X1_HVT)               0.09       1.79 r
-  cpu_inst/execute_inst/U99/Y (NAND3X0_HVT)               0.08       1.87 f
-  cpu_inst/execute_inst/U123/Y (OR2X1_HVT)                0.10       1.97 f
-  cpu_inst/execute_inst/U122/Y (AND2X1_HVT)               0.08       2.05 f
-  cpu_inst/execute_inst/U523/Y (INVX2_HVT)                0.04       2.09 r
-  cpu_inst/execute_inst/U94/Y (NAND2X0_HVT)               0.05       2.13 f
-  cpu_inst/execute_inst/U93/Y (NAND2X0_HVT)               0.07       2.20 r
-  cpu_inst/execute_inst/U557/Y (XNOR2X2_HVT)              0.13       2.34 r
-  cpu_inst/execute_inst/alu_inst/mul_inst/mul00_inst/p_o_reg[21]/D (DFFX1_HVT)
-                                                          0.00       2.34 r
-  data arrival time                                                  2.34
+  cpu_inst/execute_inst/U104/Y (AND2X1_HVT)               0.08       0.63 r
+  cpu_inst/execute_inst/U103/Y (AND2X1_HVT)               0.08       0.71 r
+  cpu_inst/execute_inst/U1257/CO (FADDX1_HVT)             0.13       0.84 r
+  cpu_inst/execute_inst/U1277/S (FADDX1_HVT)              0.22       1.06 f
+  cpu_inst/execute_inst/U1279/S (FADDX1_HVT)              0.21       1.27 r
+  cpu_inst/execute_inst/U1319/S (FADDX1_HVT)              0.23       1.49 f
+  cpu_inst/execute_inst/U1324/S (FADDX1_HVT)              0.20       1.69 r
+  cpu_inst/execute_inst/U198/Y (OR2X2_HVT)                0.09       1.78 r
+  cpu_inst/execute_inst/U105/Y (AND2X1_HVT)               0.07       1.85 r
+  cpu_inst/execute_inst/U579/Y (NAND2X0_HVT)              0.05       1.90 f
+  cpu_inst/execute_inst/U533/Y (AND2X1_HVT)               0.08       1.98 f
+  cpu_inst/execute_inst/U146/Y (NAND2X4_HVT)              0.11       2.09 r
+  cpu_inst/execute_inst/U191/Y (NAND2X0_HVT)              0.07       2.16 f
+  cpu_inst/execute_inst/U116/Y (NAND2X0_HVT)              0.06       2.22 r
+  cpu_inst/execute_inst/U115/Y (NAND2X0_HVT)              0.05       2.27 f
+  cpu_inst/execute_inst/U934/Y (NAND2X0_HVT)              0.05       2.33 r
+  cpu_inst/execute_inst/alu_inst/mul_inst/mul00_inst/p_o_reg[26]/D (DFFX1_HVT)
+                                                          0.00       2.33 r
+  data arrival time                                                  2.33
 
   clock clk_i (rise edge)                                 2.00       2.00
   clock network delay (ideal)                             0.00       2.00
-  cpu_inst/execute_inst/alu_inst/mul_inst/mul00_inst/p_o_reg[21]/CLK (DFFX1_HVT)
+  cpu_inst/execute_inst/alu_inst/mul_inst/mul00_inst/p_o_reg[26]/CLK (DFFX1_HVT)
                                                           0.00       2.00 r
   library setup time                                     -0.09       1.91
   data required time                                                 1.91
   --------------------------------------------------------------------------
   data required time                                                 1.91
-  data arrival time                                                 -2.34
+  data arrival time                                                 -2.33
   --------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -0.43
+  slack (VIOLATED)                                                  -0.42
 
 
 1
@@ -1015,7 +1116,7 @@ sh cat $final_reports_dir/area.txt
 Report : area
 Design : lxp32c_top
 Version: N-2017.09-SP3
-Date   : Thu Nov 25 01:18:14 2021
+Date   : Thu Nov 25 21:14:16 2021
 ****************************************
 
 Library(s) Used:
@@ -1024,22 +1125,22 @@ Library(s) Used:
     saed32sram_ss0p95v125c (File: /home/espanol/libraries/PDKS/SAED32_EDK_12162019/lib/sram/db_nldm/saed32sram_ss0p95v125c.db)
 
 Number of ports:                          652
-Number of nets:                         54133
-Number of cells:                        52935
-Number of combinational cells:          35499
-Number of sequential cells:             17431
+Number of nets:                         54100
+Number of cells:                        52966
+Number of combinational cells:          35533
+Number of sequential cells:             17428
 Number of macros/black boxes:               2
-Number of buf/inv:                       2184
-Number of references:                      56
+Number of buf/inv:                       2205
+Number of references:                      50
 
-Combinational area:             101270.794524
-Buf/Inv area:                     4265.044706
-Noncombinational area:          115110.716416
+Combinational area:             101349.070876
+Buf/Inv area:                     4285.630370
+Noncombinational area:          115106.904257
 Macro/Black Box area:            37986.582031
-Net Interconnect area:          139308.954585
+Net Interconnect area:          138750.077754
 
-Total cell area:                254368.092971
-Total area:                     393677.047557
+Total cell area:                254442.557164
+Total area:                     393192.634918
 1
 report_power > $final_reports_dir/power.txt
 sh cat $final_reports_dir/power.txt
@@ -1049,7 +1150,7 @@ Report : power
         -analysis_effort low
 Design : lxp32c_top
 Version: N-2017.09-SP3
-Date   : Thu Nov 25 01:18:14 2021
+Date   : Thu Nov 25 21:14:16 2021
 ****************************************
 
 
@@ -1079,26 +1180,26 @@ Power-specific unit information :
     Leakage Power Units = 1pW
 
 
-  Cell Internal Power  =  49.2943 mW  (100%)
-  Net Switching Power  =  60.8066 uW    (0%)
+  Cell Internal Power  =  49.3035 mW  (100%)
+  Net Switching Power  =  56.8276 uW    (0%)
                          ---------
-Total Dynamic Power    =  49.3551 mW  (100%)
+Total Dynamic Power    =  49.3603 mW  (100%)
 
-Cell Leakage Power     =   3.6748 mW
+Cell Leakage Power     =   3.6784 mW
 
 
                  Internal         Switching           Leakage            Total
 Power Group      Power            Power               Power              Power   (   %    )  Attrs
 --------------------------------------------------------------------------------------------------
 io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
-memory           697.4167            1.3604            0.0000          698.7770  (   1.32%)
+memory           694.4733            0.7568            0.0000          695.2301  (   1.31%)
 black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
 clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
-register       4.8543e+04            8.3774        2.2866e+09        5.0838e+04  (  95.85%)
+register       4.8553e+04            6.1917        2.2867e+09        5.0845e+04  (  95.85%)
 sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
-combinational     60.5281           51.0689        1.3882e+09        1.4998e+03  (   2.83%)
+combinational     62.6583           49.8795        1.3917e+09        1.5043e+03  (   2.84%)
 --------------------------------------------------------------------------------------------------
-Total          4.9300e+04 uW        60.8066 uW     3.6748e+09 pW     5.3036e+04 uW
+Total          4.9310e+04 uW        56.8280 uW     3.6784e+09 pW     5.3045e+04 uW
 1
 # netlist
 # write_file -f verilog -hier -output $outputs_dir/syn.v

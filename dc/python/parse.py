@@ -2,7 +2,7 @@ import os
 from pyparsing import *
 
 netlist = open(os.getcwd() + "/outputs/flat_syn.v", "r")
-connectivity = open(os.getcwd() + "/outputs/netlist_parsed.txt", "w")
+connectivity = open(os.getcwd() + "/modfiles/netlist_parsed.txt", "w")
 
 line = netlist.readline()
 

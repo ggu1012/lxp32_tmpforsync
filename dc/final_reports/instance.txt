@@ -1,9 +1,11 @@
+Information: Updating graph... (UID-83)
+Warning: Design 'lxp32c_top' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
  
 ****************************************
 Report : reference
 Design : lxp32c_top
 Version: N-2017.09-SP3
-Date   : Wed Nov 24 11:36:58 2021
+Date   : Thu Nov 25 23:46:38 2021
 ****************************************
 
 Attributes:
@@ -20,141 +22,137 @@ Attributes:
 Reference          Library       Unit Area   Count    Total Area   Attributes
 -----------------------------------------------------------------------------
 AND2X1_HVT         saed32hvt_ss0p95v125c
-                                  2.033152     574   1167.029307  
+                                  2.033152     571   1160.929851  
 AND2X2_HVT         saed32hvt_ss0p95v125c
-                                  2.287296      17     38.884033  
+                                  2.287296      19     43.458625  
 AND2X4_HVT         saed32hvt_ss0p95v125c
-                                  2.795584     150    419.337595  
+                                  2.795584      32     89.458687  
 AND3X1_HVT         saed32hvt_ss0p95v125c
-                                  2.287296      77    176.121796  
+                                  2.287296      45    102.928323  
 AND3X2_HVT         saed32hvt_ss0p95v125c
                                   2.541440       1      2.541440  
 AND4X1_HVT         saed32hvt_ss0p95v125c
-                                  2.541440      75    190.608001  
+                                  2.541440      50    127.072001  
 AO21X1_HVT         saed32hvt_ss0p95v125c
-                                  2.541440     242    615.028482  
+                                  2.541440     244    620.111362  
 AO21X2_HVT         saed32hvt_ss0p95v125c
-                                  2.795584      29     81.071935  
+                                  2.795584      24     67.094015  
 AO22X1_HVT         saed32hvt_ss0p95v125c
-                                  2.541440   23073  58638.645352  
+                                  2.541440   10746  27310.314348  
 AO22X2_HVT         saed32hvt_ss0p95v125c
-                                  2.795584       9     25.160256  
+                                  2.795584      15     41.933759  
 AO221X1_HVT        saed32hvt_ss0p95v125c
                                   3.049728       4     12.198912  
 AO222X1_HVT        saed32hvt_ss0p95v125c
-                                  3.303872     144    475.757584  
+                                  3.303872     112    370.033676  
 AOI21X1_HVT        saed32hvt_ss0p95v125c
-                                  3.049728     137    417.812725  
+                                  3.049728     133    405.613813  
 AOI21X2_HVT        saed32hvt_ss0p95v125c
-                                  3.303872       1      3.303872  
-AOI22X1_HVT        saed32hvt_ss0p95v125c
-                                  3.049728      46    140.287484  
-AOI22X2_HVT        saed32hvt_ss0p95v125c
                                   3.303872       2      6.607744  
+AOI22X1_HVT        saed32hvt_ss0p95v125c
+                                  3.049728      51    155.536124  
+AOI22X2_HVT        saed32hvt_ss0p95v125c
+                                  3.303872       1      3.303872  
 AOI222X1_HVT       saed32hvt_ss0p95v125c
                                   3.812160       3     11.436480  
 DFFASX1_HVT        saed32hvt_ss0p95v125c
-                                  7.116032       2     14.232064  n
+                                  7.116032       4     28.464128  n
 DFFSSRX1_HVT       saed32hvt_ss0p95v125c
-                                  7.370176       3     22.110528  n
+                                  7.370176       2     14.740352  n
 DFFX1_HVT          saed32hvt_ss0p95v125c
-                                  6.607744   25633  169376.307512 n
+                                  6.607744   17410  115040.826817 n
 DFFX2_HVT          saed32hvt_ss0p95v125c
-                                  7.624320       5     38.121600  n
+                                  7.624320       3     22.872960  n
 FADDX1_HVT         saed32hvt_ss0p95v125c
                                   4.828736     323   1559.681673  r
 HADDX1_HVT         saed32hvt_ss0p95v125c
-                                  3.303872      42    138.762629  r
-HADDX2_HVT         saed32hvt_ss0p95v125c
-                                  3.812160       1      3.812160  r
+                                  3.303872      38    125.547140  r
 INVX0_HVT          saed32hvt_ss0p95v125c
-                                  1.270720     892   1133.482244  
+                                  1.270720     595    756.078403  
 INVX1_HVT          saed32hvt_ss0p95v125c
-                                  1.270720     111    141.049921  
+                                  1.270720     104    132.154881  
 INVX2_HVT          saed32hvt_ss0p95v125c
-                                  1.524864     324    494.055923  
+                                  1.524864      84    128.088573  
 INVX4_HVT          saed32hvt_ss0p95v125c
-                                  2.033152     600   1219.891262  
+                                  2.033152     589   1197.526589  
 INVX8_HVT          saed32hvt_ss0p95v125c
-                                  3.049728      14     42.696191  
+                                  3.049728      19     57.944830  
 MUX21X1_HVT        saed32hvt_ss0p95v125c
-                                  3.303872   14607  48259.659888  
+                                  3.303872   14640  48368.687668  
 NAND2X0_HVT        saed32hvt_ss0p95v125c
-                                  1.524864    1277   1947.251275  
-NAND2X1_HVT        saed32hvt_ss0p95v125c
-                                  2.541440       2      5.082880  
+                                  1.524864    1050   1601.107156  
 NAND2X2_HVT        saed32hvt_ss0p95v125c
                                   2.795584      42    117.414526  
 NAND2X4_HVT        saed32hvt_ss0p95v125c
                                   3.303872       3      9.911616  
 NAND3X0_HVT        saed32hvt_ss0p95v125c
-                                  1.779008     110    195.690883  
+                                  1.779008     120    213.480964  
 NAND3X1_HVT        saed32hvt_ss0p95v125c
-                                  2.795584       1      2.795584  
+                                  2.795584       5     13.977920  
 NAND3X2_HVT        saed32hvt_ss0p95v125c
-                                  3.049728       5     15.248640  
-NAND3X4_HVT        saed32hvt_ss0p95v125c
-                                  3.558016       1      3.558016  
+                                  3.049728       2      6.099456  
 NAND4X0_HVT        saed32hvt_ss0p95v125c
-                                  2.033152     811   1648.886356  
+                                  2.033152     551   1120.266809  
 NBUFFX2_HVT        saed32hvt_ss0p95v125c
-                                  2.033152     444    902.719534  
+                                  2.033152     351    713.636388  
 NBUFFX4_HVT        saed32hvt_ss0p95v125c
-                                  2.541440     326    828.509443  
+                                  2.541440     391    993.703044  
 NBUFFX8_HVT        saed32hvt_ss0p95v125c
-                                  3.812160     106    404.088962  
+                                  3.812160      58    221.105281  
 NBUFFX16_HVT       saed32hvt_ss0p95v125c
-                                  6.099456      11     67.094014  
-NBUFFX32_HVT       saed32hvt_ss0p95v125c
-                                 10.674048       1     10.674048  
+                                  6.099456      14     85.392382  
 NOR2X0_HVT         saed32hvt_ss0p95v125c
-                                  2.541440     654   1662.101767  
+                                  2.541440     653   1659.560327  
 NOR2X2_HVT         saed32hvt_ss0p95v125c
-                                  2.795584      27     75.480767  
+                                  2.795584      29     81.071935  
 NOR2X4_HVT         saed32hvt_ss0p95v125c
-                                  3.303872      16     52.861954  
+                                  3.303872      24     79.292931  
 NOR3X0_HVT         saed32hvt_ss0p95v125c
-                                  2.795584       1      2.795584  
+                                  2.795584       2      5.591168  
 NOR4X1_HVT         saed32hvt_ss0p95v125c
-                                  3.049728    3157   9627.991033  
+                                  3.049728    2127   6486.771279  
 OA21X1_HVT         saed32hvt_ss0p95v125c
-                                  2.541440      81    205.856641  
+                                  2.541440      77    195.690881  
 OA22X1_HVT         saed32hvt_ss0p95v125c
                                   2.541440     139    353.260161  
 OA221X1_HVT        saed32hvt_ss0p95v125c
-                                  3.049728       8     24.397823  
+                                  3.049728       9     27.447551  
 OA222X1_HVT        saed32hvt_ss0p95v125c
                                   3.303872       2      6.607744  
 OAI21X1_HVT        saed32hvt_ss0p95v125c
                                   3.049728     121    369.017078  
 OAI21X2_HVT        saed32hvt_ss0p95v125c
-                                  3.303872      27     89.204547  
+                                  3.303872      26     85.900675  
 OAI22X1_HVT        saed32hvt_ss0p95v125c
                                   3.049728       6     18.298368  
 OR2X1_HVT          saed32hvt_ss0p95v125c
-                                  2.033152     670   1362.211909  
+                                  2.033152     669   1360.178757  
 OR2X2_HVT          saed32hvt_ss0p95v125c
-                                  2.287296      21     48.033217  
+                                  2.287296      27     61.756994  
 OR2X4_HVT          saed32hvt_ss0p95v125c
-                                  2.795584       7     19.569088  
+                                  2.795584       4     11.182336  
 OR3X1_HVT          saed32hvt_ss0p95v125c
-                                  2.287296     120    274.475527  
+                                  2.287296      88    201.282053  
+OR3X2_HVT          saed32hvt_ss0p95v125c
+                                  2.541440       1      2.541440  
 OR4X1_HVT          saed32hvt_ss0p95v125c
-                                  3.558016      33    117.414530  
+                                  3.558016       1      3.558016  
+SRAM2RW128x32      saed32sram_ss0p95v125c
+                              18993.291016       2  37986.582031  b, d
 XNOR2X1_HVT        saed32hvt_ss0p95v125c
-                                  4.320448      80    345.635834  
+                                  4.320448      84    362.917625  
 XNOR2X2_HVT        saed32hvt_ss0p95v125c
-                                  4.574592      24    109.790211  
+                                  4.574592      23    105.215619  
 XNOR3X1_HVT        saed32hvt_ss0p95v125c
                                   6.099456       1      6.099456  
 XOR2X1_HVT         saed32hvt_ss0p95v125c
-                                  4.320448     270   1166.520939  
+                                  4.320448     269   1162.200491  
 XOR2X2_HVT         saed32hvt_ss0p95v125c
                                   4.574592      43    196.707461  
 XOR3X1_HVT         saed32hvt_ss0p95v125c
-                                  7.116032      25    177.900803  
+                                  7.116032      22    156.552707  
 XOR3X2_HVT         saed32hvt_ss0p95v125c
-                                  7.370176      52    383.249144  
+                                  7.370176      54    397.989495  
 -----------------------------------------------------------------------------
-Total 68 references                                 307720.103954
+Total 66 references                                 254442.557164
 1

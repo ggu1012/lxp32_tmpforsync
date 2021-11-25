@@ -4,8 +4,8 @@ import json
 
 
 parsed = open(os.getcwd() + "/outputs/syn.sdf", "r")
-connectivity = open(os.getcwd() + '/outputs/connectivity.json', 'w')
-tmp = open(os.getcwd() + '/outputs/connectivity_list.text', 'w')
+connectivity = open(os.getcwd() + '/modfiles/connectivity.json', 'w')
+tmp = open(os.getcwd() + '/modfiles/connectivity_list.text', 'w')
 
 
 nodes = dict()
