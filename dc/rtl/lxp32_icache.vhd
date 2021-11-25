@@ -88,6 +88,8 @@ signal out_1: std_logic_vector(31 downto 0);
 signal out_2: std_logic_vector(31 downto 0);
 signal dummy_bus: std_logic_vector(31 downto 0);
 
+signal ram_raddr_before: std_logic_vector(7 downto 0);
+
 begin
 
 assert PREFETCH_SIZE>=4
@@ -126,14 +128,13 @@ ram_re<= lli_re_i or miss; -- low active
 -- channel 2 for only write
 
 web1 <= ram_re; -- 1 : read, 0 : write
-oeb1 <= not ram_re;
+oeb1 <= '0';
 web2 <= not ram_we;
 oeb2 <= '1';
 csb1_oneblk <= ((not ram_re) or ram_raddr(0));
 csb2_oneblk <= ((not ram_we) or ram_waddr(0));
 csb1_twoblk <= not (ram_re and ram_raddr(0));
 csb2_twoblk <= not (ram_we and ram_waddr(0));
-
 
 
 sram_inst1: entity work.lxp32_ram128x32(rtl)
@@ -174,7 +175,14 @@ sram_inst2: entity work.lxp32_ram128x32(rtl)
 		O2=>dummy_bus  -- output data bus
 	);
 
-lli_dat_o <= out_1 when ram_raddr(0) = '1' else out_2;
+process (clk_i) is
+begin
+	if (rising_edge(clk_i)) then
+		ram_raddr_before <= ram_raddr;
+	end if;
+end process;
+
+lli_dat_o <= out_1 when ram_raddr_before(0) = '0' else out_2;
 
 -- Determine hit/miss
 
