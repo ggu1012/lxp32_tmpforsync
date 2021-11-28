@@ -32,6 +32,7 @@ clean:
 ########################
 
 compile.stamp: $(LXP32_RTL) $(COMMON_SRC) $(PLATFORM_RTL) $(TB_SRC) $(FIRMWARE) | work
+	vlog $(LXP32_SRAM)
 	vcom $(VCOMFLAGS) $(LXP32_RTL) $(COMMON_SRC) $(PLATFORM_RTL) $(TB_SRC)
 	echo > compile.stamp
 

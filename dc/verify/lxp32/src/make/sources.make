@@ -1,6 +1,7 @@
 # CPU RTL
 
 LXP32_DIR=../../../../rtl
+LXP32_SRAM=$(LXP32_DIR)/saed32sram.v
 LXP32_RTL=$(LXP32_DIR)/lxp32_mul16x16.vhd\
 	$(LXP32_DIR)/lxp32_mul_dsp.vhd\
 	$(LXP32_DIR)/lxp32_mul_opt.vhd\
@@ -14,12 +15,13 @@ LXP32_RTL=$(LXP32_DIR)/lxp32_mul16x16.vhd\
 	$(LXP32_DIR)/lxp32_decode.vhd\
 	$(LXP32_DIR)/lxp32_ubuf.vhd\
 	$(LXP32_DIR)/lxp32_fetch.vhd\
+	$(LXP32_DIR)/lxp32_sram.vhd\
 	$(LXP32_DIR)/lxp32_ram256x32.vhd\
 	$(LXP32_DIR)/lxp32_interrupt_mux.vhd\
 	$(LXP32_DIR)/lxp32_scratchpad.vhd\
 	$(LXP32_DIR)/lxp32_cpu.vhd\
-	$(LXP32_DIR)/lxp32u_top.vhd\
 	$(LXP32_DIR)/lxp32_icache.vhd\
+	$(LXP32_DIR)/lxp32u_top.vhd\
 	$(LXP32_DIR)/lxp32c_top.vhd
 
 # Common package
