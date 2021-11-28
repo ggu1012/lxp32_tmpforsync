@@ -75,21 +75,6 @@ signal hitc: std_logic;
 signal hitp: std_logic;
 signal miss: std_logic:='0';
 
-signal web1: std_logic; -- 1 : read, 0 : write
-signal oeb1: std_logic;
-signal web2: std_logic;
-signal oeb2: std_logic;
-signal csb1_oneblk: std_logic;
-signal csb2_oneblk: std_logic;
-signal csb1_twoblk: std_logic;
-signal csb2_twoblk: std_logic;
-
-signal out_1: std_logic_vector(31 downto 0);
-signal out_2: std_logic_vector(31 downto 0);
-signal dummy_bus: std_logic_vector(31 downto 0);
-
-signal ram_raddr_before: std_logic_vector(7 downto 0);
-
 begin
 
 assert PREFETCH_SIZE>=4
@@ -124,65 +109,18 @@ ram_raddr<=std_logic_vector(read_offset);
 ram_we<= wb_stb and wbm_ack_i; -- low active
 ram_re<= lli_re_i or miss; -- low active
 
--- channel 1 for only read
--- channel 2 for only write
-
-web1 <= ram_re; -- 1 : read, 0 : write
-oeb1 <= '0';
-web2 <= not ram_we;
-oeb2 <= '1';
-csb1_oneblk <= ((not ram_re) or ram_raddr(0));
-csb2_oneblk <= ((not ram_we) or ram_waddr(0));
-csb1_twoblk <= not (ram_re and ram_raddr(0));
-csb2_twoblk <= not (ram_we and ram_waddr(0));
-
-
-sram_inst1: entity work.lxp32_ram128x32(rtl)
+ram_inst: entity work.lxp32_ram256x32(rtl)
 	port map(
-		CE1 => clk_i, -- clk
-		CE2 => clk_i, -- clk
-		WEB1 => web1, -- write enable, active low
-		WEB2 => web2, -- write enable, active low
-		OEB1=> oeb1, -- output enable, active low
-		OEB2=> oeb2, -- output enable, active low
-		CSB1=>csb1_oneblk, -- chip select, active low
-		CSB2=>csb2_oneblk, -- chip select, active low
-
-		A1=> std_logic_vector(ram_raddr(7 downto 1)), -- R/W address
-		A2=> std_logic_vector(ram_waddr(7 downto 1)), -- R/W address
-		I1=>wbm_dat_i, -- input data bus
-		I2=>wbm_dat_i, -- input data bus
-		O1=>out_1, -- output data bus
-		O2=>dummy_bus  -- output data bus
+		clk_i=>clk_i,
+		
+		we_i=>ram_we,
+		waddr_i=>ram_waddr,
+		wdata_i=>wbm_dat_i,
+		
+		re_i=>ram_re,
+		raddr_i=>ram_raddr,
+		rdata_o=>lli_dat_o
 	);
-
-sram_inst2: entity work.lxp32_ram128x32(rtl)
-	port map(
-		CE1 => clk_i, -- clk
-		CE2 => clk_i, -- clk
-		WEB1 => web1, -- write enable, active low
-		WEB2 => web2, -- write enable, active low
-		OEB1=> oeb1, -- output enable, active low
-		OEB2=> oeb2, -- output enable, active low
-		CSB1=> csb1_twoblk, -- chip select, active low
-		CSB2=> csb2_twoblk, -- chip select, active low
-
-		A1=> std_logic_vector(ram_raddr(7 downto 1)), -- R/W address
-		A2=> std_logic_vector(ram_waddr(7 downto 1)), -- R/W address
-		I1=>wbm_dat_i, -- input data bus
-		I2=>wbm_dat_i, -- input data bus
-		O1=>out_2, -- output data bus
-		O2=>dummy_bus  -- output data bus
-	);
-
-process (clk_i) is
-begin
-	if (rising_edge(clk_i)) then
-		ram_raddr_before <= ram_raddr;
-	end if;
-end process;
-
-lli_dat_o <= out_1 when ram_raddr_before(0) = '0' else out_2;
 
 -- Determine hit/miss
 

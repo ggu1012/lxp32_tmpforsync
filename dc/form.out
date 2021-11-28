@@ -42,11 +42,11 @@ set sram $rtl_dir/saed32sram.v
 analyze -f verilog $sram -lib work
 Running PRESTO HDLC
 Compiling source file /home/under_ksh/lxp32_project/dc/rtl/saed32sram.v
-Warning:  /home/under_ksh/lxp32_project/dc/rtl/saed32sram.v:113: the undeclared symbol 'RE1' assumed to have the default net type, which is 'wire'. (VER-936)
-Warning:  /home/under_ksh/lxp32_project/dc/rtl/saed32sram.v:114: the undeclared symbol 'WE1' assumed to have the default net type, which is 'wire'. (VER-936)
-Warning:  /home/under_ksh/lxp32_project/dc/rtl/saed32sram.v:115: the undeclared symbol 'RE2' assumed to have the default net type, which is 'wire'. (VER-936)
-Warning:  /home/under_ksh/lxp32_project/dc/rtl/saed32sram.v:116: the undeclared symbol 'WE2' assumed to have the default net type, which is 'wire'. (VER-936)
-Error:  /home/under_ksh/lxp32_project/dc/rtl/saed32sram.v:122: case equality (===) is not supported by synthesis. (VER-189)
+Warning:  /home/under_ksh/lxp32_project/dc/rtl/saed32sram.v:103: the undeclared symbol 'RE1' assumed to have the default net type, which is 'wire'. (VER-936)
+Warning:  /home/under_ksh/lxp32_project/dc/rtl/saed32sram.v:104: the undeclared symbol 'WE1' assumed to have the default net type, which is 'wire'. (VER-936)
+Warning:  /home/under_ksh/lxp32_project/dc/rtl/saed32sram.v:105: the undeclared symbol 'RE2' assumed to have the default net type, which is 'wire'. (VER-936)
+Warning:  /home/under_ksh/lxp32_project/dc/rtl/saed32sram.v:106: the undeclared symbol 'WE2' assumed to have the default net type, which is 'wire'. (VER-936)
+Error:  /home/under_ksh/lxp32_project/dc/rtl/saed32sram.v:112: case equality (===) is not supported by synthesis. (VER-189)
 *** Presto compilation terminated with 1 errors. ***
 Loading db file '/home/espanol/libraries/PDKS/SAED32_EDK_12162019/lib/sram/db_nldm/saed32sram_ss0p95v125c.db'
 Loading db file '/home/espanol/libraries/PDKS/SAED32_EDK_12162019/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95v125c.db'
@@ -136,6 +136,11 @@ Warning:  /home/under_ksh/lxp32_project/dc/rtl/lxp32c_top.vhd:62: The architectu
 Compiling Entity Declaration LXP32_ICACHE
 Compiling Architecture RTL of LXP32_ICACHE
 Warning:  /home/under_ksh/lxp32_project/dc/rtl/lxp32_icache.vhd:41: The architecture rtl has already been analyzed. It is being replaced. (VHD-4)
+[Failure] WORK.RTL/LXP32_ALU is obsolete (used WORK.LXP32_MUL_DSP is more recent)
+[Failure] WORK.RTL/LXP32_ALU is obsolete (used WORK.LXP32_MUL_OPT is more recent)
+[Failure] WORK.RTL/LXP32_ALU is obsolete (used WORK.LXP32_MUL_SEQ is more recent)
+[Failure] WORK.RTL/LXP32_ALU is obsolete (used WORK.LXP32_DIVIDER is more recent)
+[Failure] WORK.RTL/LXP32_ALU is obsolete (used WORK.LXP32_SHIFTER is more recent)
 Presto compilation completed successfully.
 1
 # top module name을 elaborate 뒤에 작성
@@ -265,7 +270,7 @@ Information:  Presto preserved an unloaded net 'dummy_bus[30]'. (ELAB-510)
 Information:  Presto preserved an unloaded net 'dummy_bus[31]'. (ELAB-510)
 
 Inferred memory devices in process
-	in routine lxp32_icache_BURST_SIZE16_PREFETCH_SIZE32 line 104 in file
+	in routine lxp32_icache_BURST_SIZE16_PREFETCH_SIZE32 line 106 in file
 		'/home/under_ksh/lxp32_project/dc/rtl/lxp32_icache.vhd'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -274,7 +279,16 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine lxp32_icache_BURST_SIZE16_PREFETCH_SIZE32 line 194 in file
+	in routine lxp32_icache_BURST_SIZE16_PREFETCH_SIZE32 line 178 in file
+		'/home/under_ksh/lxp32_project/dc/rtl/lxp32_icache.vhd'.
+================================================================================
+|    Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+================================================================================
+| ram_raddr_before_reg | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+================================================================================
+
+Inferred memory devices in process
+	in routine lxp32_icache_BURST_SIZE16_PREFETCH_SIZE32 line 202 in file
 		'/home/under_ksh/lxp32_project/dc/rtl/lxp32_icache.vhd'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -283,7 +297,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine lxp32_icache_BURST_SIZE16_PREFETCH_SIZE32 line 213 in file
+	in routine lxp32_icache_BURST_SIZE16_PREFETCH_SIZE32 line 221 in file
 		'/home/under_ksh/lxp32_project/dc/rtl/lxp32_icache.vhd'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -292,7 +306,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine lxp32_icache_BURST_SIZE16_PREFETCH_SIZE32 line 233 in file
+	in routine lxp32_icache_BURST_SIZE16_PREFETCH_SIZE32 line 241 in file
 		'/home/under_ksh/lxp32_project/dc/rtl/lxp32_icache.vhd'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -301,7 +315,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine lxp32_icache_BURST_SIZE16_PREFETCH_SIZE32 line 252 in file
+	in routine lxp32_icache_BURST_SIZE16_PREFETCH_SIZE32 line 260 in file
 		'/home/under_ksh/lxp32_project/dc/rtl/lxp32_icache.vhd'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -734,7 +748,7 @@ Information: Evaluating DesignWare library utilization. (UISN-27)
 
 Information: Sequential output inversion is enabled.  SVF file must be used for formal verification. (OPT-1208)
 
-Information: There are 134 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+Information: There are 136 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
 
 Information: Uniquified 2 instances of design 'lxp32_ram128x32'. (OPT-1056)
 Information: Uniquified 2 instances of design 'lxp32_ram256x32'. (OPT-1056)
@@ -801,6 +815,7 @@ Information: Complementing port 'cmd_shift_right_i' in design 'lxp32_execute_0_1
 	 The new name of the port is 'cmd_shift_right_i_BAR'. (OPT-319)
 Information: Complementing port 'valid_i' in design 'lxp32_alu_1_dsp'.
 	 The new name of the port is 'valid_i_BAR'. (OPT-319)
+Information: In design 'lxp32c_top', the register 'icache_inst/ram_raddr_before_reg[0]' is removed because it is merged to 'icache_inst/lli_adr_reg_reg[0]'. (OPT-1215)
 
 Threshold voltage group cell usage:
 >> saed32cell_hvt 100.00%, saed32cell_svt 0.00%
@@ -878,38 +893,38 @@ Threshold voltage group cell usage:
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:04:06  260109.5      0.85    3704.9      28.2                           4210569728.0000
-    0:04:57  260493.5      0.50    3884.7      31.2                           4211673856.0000
-    0:04:57  260493.5      0.50    3884.7      31.2                           4211673856.0000
-    0:05:04  260494.2      0.50    3884.7      31.2                           4211749632.0000
+    0:04:07  260112.3      0.85    3705.1      27.5                           4211133184.0000
+    0:04:57  260496.3      0.50    3884.9      30.6                           4212237312.0000
+    0:04:57  260496.3      0.50    3884.9      30.6                           4212237312.0000
+    0:05:04  260494.7      0.50    3885.0      40.0                           4212246016.0000
 
 Threshold voltage group cell usage:
 >> saed32cell_hvt 100.00%, saed32cell_svt 0.00%
 
   Beginning WLM Backend Optimization
   --------------------------------------
-    0:05:30  259539.2      0.49    3910.9      30.4                           4181800192.0000
-    0:05:41  258278.1      0.49    3931.7      30.4                           4147088640.0000
-    0:05:47  258162.5      0.49    3926.7      30.4                           4143359744.0000
-    0:05:52  257996.8      0.49    3823.0      28.9                           4115363072.0000
-    0:05:52  257996.8      0.49    3823.0      28.9                           4115363072.0000
-    0:05:55  258019.6      0.49    3822.8      28.9                           4116034048.0000
-    0:05:55  258019.6      0.49    3822.8      28.9                           4116034048.0000
-    0:05:55  258019.6      0.49    3822.8      28.9                           4116034048.0000
-    0:05:55  258019.6      0.49    3822.8      28.9                           4116034048.0000
-    0:05:55  258019.6      0.49    3822.8      28.9                           4116034048.0000
-    0:05:55  258019.6      0.49    3822.8      28.9                           4116034048.0000
-    0:06:09  258065.6      0.47    4544.0      30.0                           4116522240.0000
-    0:06:09  258065.6      0.47    4544.0      30.0                           4116522240.0000
-    0:06:11  258065.6      0.47    4544.0      30.0                           4116542464.0000
-    0:06:11  258065.6      0.47    4544.0      30.0                           4116542464.0000
-    0:06:16  258073.5      0.47    4565.5      30.0                           4116988160.0000
-    0:06:16  258073.5      0.47    4565.5      30.0                           4116988160.0000
-    0:06:16  258073.3      0.47    4565.6      30.0                           4116973312.0000
-    0:06:16  258073.3      0.47    4565.6      30.0                           4116973312.0000
-    0:06:17  258073.3      0.47    4565.5      30.0                           4116973312.0000
-    0:06:17  258073.3      0.47    4565.5      30.0                           4116973312.0000
-    0:06:19  258073.3      0.47    4565.5      30.0                           4116973312.0000
+    0:05:29  259546.0      0.49    3907.8      39.3                           4182689280.0000
+    0:05:37  258383.1      0.49    3925.2      39.3                           4150185984.0000
+    0:05:40  258297.2      0.49    3924.5      39.3                           4146946560.0000
+    0:05:45  258138.8      0.49    3835.5      39.3                           4119759360.0000
+    0:05:46  258138.8      0.49    3835.5      39.3                           4119759360.0000
+    0:05:49  258156.1      0.50    3838.4      39.3                           4120253440.0000
+    0:05:49  258156.1      0.50    3838.4      39.3                           4120253440.0000
+    0:05:49  258156.1      0.50    3838.4      39.3                           4120253440.0000
+    0:05:49  258156.1      0.50    3838.4      39.3                           4120253440.0000
+    0:05:51  258156.1      0.50    3838.4      39.3                           4120253440.0000
+    0:05:51  258156.1      0.50    3838.4      39.3                           4120253440.0000
+    0:05:59  258219.4      0.48    4603.6      38.5                           4120872704.0000
+    0:05:59  258219.4      0.48    4603.6      38.5                           4120872704.0000
+    0:06:00  258219.1      0.48    4603.6      38.5                           4120857600.0000
+    0:06:00  258219.1      0.48    4603.6      38.5                           4120857600.0000
+    0:06:01  258220.2      0.48    4609.3      38.5                           4120894464.0000
+    0:06:01  258220.2      0.48    4609.3      38.5                           4120894464.0000
+    0:06:02  258220.2      0.48    4609.3      38.5                           4120894464.0000
+    0:06:02  258220.2      0.48    4609.3      38.5                           4120894464.0000
+    0:06:03  258220.2      0.48    4578.4      38.5                           4120894464.0000
+    0:06:03  258220.2      0.48    4578.4      38.5                           4120894464.0000
+    0:06:04  258220.2      0.48    4578.4      38.5                           4120894464.0000
 
 
   Beginning Design Rule Fixing  (max_transition)  (max_capacitance)
@@ -919,12 +934,13 @@ Threshold voltage group cell usage:
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:06:19  258073.3      0.47    4565.5      30.0                           4116973312.0000
+    0:06:04  258220.2      0.48    4578.4      38.5                           4120894464.0000
   Global Optimization (Phase 32)
   Global Optimization (Phase 33)
   Global Optimization (Phase 34)
-    0:06:33  258157.1      0.46    4511.7       0.0                           4120750592.0000
-    0:06:35  258156.9      0.46    4511.7       0.0                           4120697600.0000
+    0:06:12  258320.3      0.47    4547.6       0.0 cpu_inst/execute_inst/alu_inst/mul_inst/mul00_inst/p_o_reg[19]/D 4124792832.0000
+    0:06:16  258335.8      0.46    4546.9       0.0                           4124643328.0000
+    0:06:17  258336.8      0.46    4547.0       0.0                           4124686336.0000
 
 Threshold voltage group cell usage:
 >> saed32cell_hvt 100.00%, saed32cell_svt 0.00%
@@ -937,7 +953,7 @@ Threshold voltage group cell usage:
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:06:35  258156.9      0.46    4511.7       0.0                           4120697600.0000
+    0:06:17  258336.8      0.46    4547.0       0.0                           4124686336.0000
   Global Optimization (Phase 35)
   Global Optimization (Phase 36)
   Global Optimization (Phase 37)
@@ -954,56 +970,54 @@ Threshold voltage group cell usage:
   Global Optimization (Phase 48)
   Global Optimization (Phase 49)
   Global Optimization (Phase 50)
-    0:07:01  256017.7      0.49    4238.1       0.0 cpu_inst/execute_inst/alu_inst/mul_inst/mul00_inst/p_o_reg[28]/D 4050128384.0000
-    0:07:16  256036.5      0.48    4100.1       0.0                           4050425088.0000
-    0:07:21  256080.0      0.48    4043.4       0.0                           4052152576.0000
-    0:07:21  256080.0      0.48    4043.4       0.0                           4052152576.0000
-    0:07:27  256117.4      0.48    3989.1       0.0                           4053342720.0000
-    0:07:27  256117.4      0.48    3989.1       0.0                           4053342720.0000
-    0:07:30  256180.6      0.48    3703.7       0.4                           4055216384.0000
-    0:07:30  256180.6      0.48    3703.7       0.4                           4055216384.0000
-    0:07:30  256180.6      0.48    3703.7       0.4                           4055228160.0000
-    0:07:30  256180.6      0.48    3703.7       0.4                           4055228160.0000
-    0:07:31  256181.2      0.48    3703.7       0.4                           4055257856.0000
-    0:07:31  256181.2      0.48    3703.7       0.4                           4055257856.0000
-    0:07:35  256220.8      0.45    3721.0       0.4                           4057352704.0000
-    0:07:35  256220.8      0.45    3721.0       0.4                           4057352704.0000
-    0:07:37  256227.2      0.45    3721.0       0.4                           4057644544.0000
-    0:07:37  256227.2      0.45    3721.0       0.4                           4057644544.0000
-    0:07:40  256229.7      0.45    3726.6       0.4                           4057960960.0000
-    0:07:40  256229.7      0.45    3726.6       0.4                           4057960960.0000
-    0:07:41  256230.5      0.45    3726.6       0.4                           4058016512.0000
-    0:07:41  256230.5      0.45    3726.6       0.4                           4058016512.0000
-    0:07:44  256255.4      0.45    3727.9       0.4                           4058339328.0000
-    0:07:44  256255.4      0.45    3727.9       0.4                           4058339328.0000
-    0:07:46  256255.6      0.45    3727.9       0.4                           4058354432.0000
+Information: Complementing port 'cmd_negate_op2_i' in design 'lxp32_execute_0_1_dsp'.
+	 The new name of the port is 'cmd_negate_op2_i_BAR'. (OPT-319)
+    0:06:42  256123.0      0.53    4461.2       9.0                           4053229824.0000
+    0:06:49  256235.5      0.51    3428.3       9.5                           4055740672.0000
+    0:06:49  256235.5      0.51    3428.3       9.5                           4055740672.0000
+    0:06:56  256288.4      0.51    3294.0       1.6                           4057751808.0000
+    0:06:56  256288.4      0.51    3294.0       1.6                           4057751808.0000
+    0:06:58  256288.9      0.51    3294.0       1.6                           4057806592.0000
+    0:06:58  256288.9      0.51    3294.0       1.6                           4057806592.0000
+    0:06:58  256288.9      0.51    3294.0       1.6                           4057806592.0000
+    0:06:58  256288.9      0.51    3294.0       1.6                           4057806592.0000
+    0:06:59  256288.9      0.51    3294.0       1.6                           4057806592.0000
+    0:06:59  256288.9      0.51    3294.0       1.6                           4057806592.0000
+    0:07:09  256341.3      0.46    4330.9      13.3                           4059250432.0000
+    0:07:09  256341.3      0.46    4330.9      13.3                           4059250432.0000
+    0:07:13  256378.6      0.46    4441.0      13.8                           4060499712.0000
+    0:07:13  256378.6      0.46    4441.0      13.8                           4060499712.0000
+    0:07:20  256398.7      0.45    4374.0      13.8                           4060873216.0000
+    0:07:20  256398.7      0.45    4374.0      13.8                           4060873216.0000
+    0:07:21  256398.7      0.45    4374.0      13.8                           4060873216.0000
+    0:07:21  256398.7      0.45    4374.0      13.8                           4060873216.0000
+    0:07:22  256398.7      0.45    4374.0      13.8                           4060873216.0000
+    0:07:22  256398.7      0.45    4374.0      13.8                           4060873216.0000
+    0:07:23  256398.7      0.45    4374.0      13.8                           4060873216.0000
 
                                   TOTAL                                                
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:07:48  256255.6      0.45    3727.9       0.4                           4058354432.0000
-    0:07:52  254449.7      0.46    3688.1       0.2                           4025480448.0000
-    0:08:02  254441.0      0.45    3687.0       0.2                           4026515712.0000
-    0:08:05  254406.7      0.45    3685.2       0.2                           4025978112.0000
-    0:08:09  254358.4      0.45    3678.5       0.2                           4025040384.0000
-    0:08:14  254341.4      0.45    3677.5       0.2                           4024709632.0000
-    0:08:14  254338.1      0.45    3677.4       0.2                           4024683520.0000
-    0:08:14  254338.1      0.45    3677.4       0.2                           4024683520.0000
-    0:08:18  254420.7      0.45    3583.6       0.2                           4029816320.0000
-    0:08:32  254415.6      0.44    3579.0       0.1 cpu_inst/execute_inst/alu_inst/mul_inst/mul00_inst/p_o_reg[25]/D 4030169600.0000
-    0:08:44  254476.6      0.43    3566.4       0.1 cpu_inst/execute_inst/alu_inst/mul_inst/mul00_inst/p_o_reg[25]/D 4031678976.0000
-    0:08:51  254505.1      0.43    3566.3       0.0                           4032941312.0000
-    0:08:58  254518.5      0.42    4053.5       0.0                           4033375232.0000
-    0:08:58  254518.5      0.42    4053.5       0.0                           4033375232.0000
-    0:08:59  254518.5      0.42    4053.5       0.0                           4033375232.0000
-    0:08:59  254518.5      0.42    4053.5       0.0                           4033375232.0000
-    0:09:00  254518.5      0.42    4053.5       0.0                           4033375232.0000
-    0:09:00  254518.5      0.42    4053.5       0.0                           4033375232.0000
-    0:09:01  254518.5      0.42    4053.5       0.0                           4033375232.0000
-    0:09:10  254539.1      0.42    3678.3       0.0                           4034857984.0000
-    0:09:10  254539.1      0.42    3678.3       0.0                           4034869504.0000
-    0:09:29  254442.6      0.42    3490.9       0.0                           4028459264.0000
+    0:07:25  256398.7      0.45    4374.0      13.8                           4060873216.0000
+    0:07:29  254661.1      0.47    4213.1      11.8                           4032463360.0000
+    0:07:36  254626.0      0.46    4214.0      11.8                           4031866112.0000
+    0:07:41  254585.4      0.46    4218.9      11.8                           4030667520.0000
+    0:07:45  254521.1      0.46    4243.2      11.8                           4029157376.0000
+    0:07:49  254509.7      0.46    4193.1      11.8                           4028974592.0000
+    0:07:49  254509.7      0.46    4193.1      11.8                           4028974592.0000
+    0:07:49  254509.7      0.46    4193.1      11.8                           4028974592.0000
+    0:07:53  254613.1      0.46    4089.4      11.8                           4035466752.0000
+    0:08:07  254605.0      0.46    4082.3       0.0 cpu_inst/execute_inst/alu_inst/mul_inst/mul00_inst/p_o_reg[29]/D 4036474368.0000
+    0:08:21  254615.6      0.45    4066.6       0.0 cpu_inst/execute_inst/alu_inst/mul_inst/mul00_inst/p_o_reg[29]/D 4036630784.0000
+    0:08:25  254652.0      0.45    4067.3       0.0 cpu_inst/execute_inst/alu_inst/mul_inst/mul00_inst/p_o_reg[22]/D 4037722368.0000
+    0:08:30  254675.6      0.44    4067.7      10.7 cpu_inst/execute_inst/alu_inst/mul_inst/mul00_inst/p_o_reg[29]/D 4039410176.0000
+    0:08:50  254676.9      0.44    4067.7       0.0                           4038328320.0000
+    0:08:53  254685.3      0.44    4053.5       0.0                           4038539008.0000
+    0:09:03  254796.8      0.43    4031.1       0.0                           4044769280.0000
+    0:09:04  254823.0      0.43    4026.8       0.0                           4046252800.0000
+    0:09:04  254824.8      0.43    4026.8       0.0                           4046404864.0000
+    0:09:18  254716.8      0.43    3968.8       0.0                           4038577920.0000
 Loading db file '/home/espanol/libraries/PDKS/SAED32_EDK_12162019/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95v125c.db'
 Loading db file '/home/espanol/libraries/PDKS/SAED32_EDK_12162019/lib/sram/db_nldm/saed32sram_ss0p95v125c.db'
 Loading db file '/home/espanol/libraries/PDKS/SAED32_EDK_12162019/lib/pll/db_nldm/saed32pll_ss0p95v125c_2p25v.db'
@@ -1038,7 +1052,7 @@ Report : timing
         -max_paths 1
 Design : lxp32c_top
 Version: N-2017.09-SP3
-Date   : Thu Nov 25 21:14:16 2021
+Date   : Sun Nov 28 22:25:00 2021
 ****************************************
 
  # A fanout number of 1000 was used for high fanout net computations.
@@ -1048,7 +1062,7 @@ Wire Load Model Mode: enclosed
 
   Startpoint: cpu_inst/scratchpad_inst/ram2_collision_reg
               (rising edge-triggered flip-flop clocked by clk_i)
-  Endpoint: cpu_inst/execute_inst/alu_inst/mul_inst/mul00_inst/p_o_reg[26]
+  Endpoint: cpu_inst/execute_inst/alu_inst/mul_inst/mul00_inst/p_o_reg[22]
             (rising edge-triggered flip-flop clocked by clk_i)
   Path Group: clk_i
   Path Type: max
@@ -1065,45 +1079,43 @@ Wire Load Model Mode: enclosed
   clock network delay (ideal)                             0.00       0.00
   cpu_inst/scratchpad_inst/ram2_collision_reg/CLK (DFFX1_HVT)
                                                           0.00 #     0.00 r
-  cpu_inst/scratchpad_inst/ram2_collision_reg/QN (DFFX1_HVT)
-                                                          0.17       0.17 r
-  U474/Y (NBUFFX4_HVT)                                    0.08       0.25 r
-  U567/Y (AO22X1_HVT)                                     0.11       0.37 r
-  U477/Y (AO22X1_HVT)                                     0.10       0.47 r
-  U476/Y (NBUFFX8_HVT)                                    0.08       0.54 r
-  cpu_inst/execute_inst/op2_i[5] (lxp32_execute_0_1_dsp)
-                                                          0.00       0.54 r
-  cpu_inst/execute_inst/U104/Y (AND2X1_HVT)               0.08       0.63 r
-  cpu_inst/execute_inst/U103/Y (AND2X1_HVT)               0.08       0.71 r
-  cpu_inst/execute_inst/U1257/CO (FADDX1_HVT)             0.13       0.84 r
-  cpu_inst/execute_inst/U1277/S (FADDX1_HVT)              0.22       1.06 f
-  cpu_inst/execute_inst/U1279/S (FADDX1_HVT)              0.21       1.27 r
-  cpu_inst/execute_inst/U1319/S (FADDX1_HVT)              0.23       1.49 f
-  cpu_inst/execute_inst/U1324/S (FADDX1_HVT)              0.20       1.69 r
-  cpu_inst/execute_inst/U198/Y (OR2X2_HVT)                0.09       1.78 r
-  cpu_inst/execute_inst/U105/Y (AND2X1_HVT)               0.07       1.85 r
-  cpu_inst/execute_inst/U579/Y (NAND2X0_HVT)              0.05       1.90 f
-  cpu_inst/execute_inst/U533/Y (AND2X1_HVT)               0.08       1.98 f
-  cpu_inst/execute_inst/U146/Y (NAND2X4_HVT)              0.11       2.09 r
-  cpu_inst/execute_inst/U191/Y (NAND2X0_HVT)              0.07       2.16 f
-  cpu_inst/execute_inst/U116/Y (NAND2X0_HVT)              0.06       2.22 r
-  cpu_inst/execute_inst/U115/Y (NAND2X0_HVT)              0.05       2.27 f
-  cpu_inst/execute_inst/U934/Y (NAND2X0_HVT)              0.05       2.33 r
-  cpu_inst/execute_inst/alu_inst/mul_inst/mul00_inst/p_o_reg[26]/D (DFFX1_HVT)
-                                                          0.00       2.33 r
-  data arrival time                                                  2.33
+  cpu_inst/scratchpad_inst/ram2_collision_reg/Q (DFFX1_HVT)
+                                                          0.22       0.22 f
+  U597/Y (AND2X1_HVT)                                     0.09       0.32 f
+  U515/Y (NBUFFX8_HVT)                                    0.07       0.39 f
+  U501/Y (AO21X1_HVT)                                     0.12       0.51 f
+  cpu_inst/execute_inst/op2_i[3] (lxp32_execute_0_1_dsp)
+                                                          0.00       0.51 f
+  cpu_inst/execute_inst/U180/Y (NBUFFX4_HVT)              0.08       0.60 f
+  cpu_inst/execute_inst/U1316/Y (AND2X1_HVT)              0.08       0.67 f
+  cpu_inst/execute_inst/U1379/CO (FADDX1_HVT)             0.11       0.78 f
+  cpu_inst/execute_inst/U1375/S (FADDX1_HVT)              0.21       0.99 r
+  cpu_inst/execute_inst/U1407/CO (FADDX1_HVT)             0.15       1.14 r
+  cpu_inst/execute_inst/U1411/S (FADDX1_HVT)              0.23       1.37 f
+  cpu_inst/execute_inst/U785/Y (XOR3X2_HVT)               0.25       1.62 r
+  cpu_inst/execute_inst/U149/Y (AND2X1_HVT)               0.09       1.72 r
+  cpu_inst/execute_inst/U136/Y (AO21X1_HVT)               0.11       1.83 r
+  cpu_inst/execute_inst/U117/Y (NAND3X0_HVT)              0.07       1.89 f
+  cpu_inst/execute_inst/U531/Y (AND2X1_HVT)               0.09       1.99 f
+  cpu_inst/execute_inst/U318/Y (NAND2X2_HVT)              0.11       2.10 r
+  cpu_inst/execute_inst/U649/Y (INVX1_HVT)                0.03       2.13 f
+  cpu_inst/execute_inst/U128/Y (OA21X1_HVT)               0.09       2.21 f
+  cpu_inst/execute_inst/U127/Y (XOR2X2_HVT)               0.13       2.34 r
+  cpu_inst/execute_inst/alu_inst/mul_inst/mul00_inst/p_o_reg[22]/D (DFFX1_HVT)
+                                                          0.00       2.34 r
+  data arrival time                                                  2.34
 
   clock clk_i (rise edge)                                 2.00       2.00
   clock network delay (ideal)                             0.00       2.00
-  cpu_inst/execute_inst/alu_inst/mul_inst/mul00_inst/p_o_reg[26]/CLK (DFFX1_HVT)
+  cpu_inst/execute_inst/alu_inst/mul_inst/mul00_inst/p_o_reg[22]/CLK (DFFX1_HVT)
                                                           0.00       2.00 r
   library setup time                                     -0.09       1.91
   data required time                                                 1.91
   --------------------------------------------------------------------------
   data required time                                                 1.91
-  data arrival time                                                 -2.33
+  data arrival time                                                 -2.34
   --------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -0.42
+  slack (VIOLATED)                                                  -0.43
 
 
 1
@@ -1116,7 +1128,7 @@ sh cat $final_reports_dir/area.txt
 Report : area
 Design : lxp32c_top
 Version: N-2017.09-SP3
-Date   : Thu Nov 25 21:14:16 2021
+Date   : Sun Nov 28 22:25:00 2021
 ****************************************
 
 Library(s) Used:
@@ -1125,22 +1137,22 @@ Library(s) Used:
     saed32sram_ss0p95v125c (File: /home/espanol/libraries/PDKS/SAED32_EDK_12162019/lib/sram/db_nldm/saed32sram_ss0p95v125c.db)
 
 Number of ports:                          652
-Number of nets:                         54100
-Number of cells:                        52966
-Number of combinational cells:          35533
-Number of sequential cells:             17428
+Number of nets:                         54146
+Number of cells:                        53012
+Number of combinational cells:          35576
+Number of sequential cells:             17431
 Number of macros/black boxes:               2
-Number of buf/inv:                       2205
-Number of references:                      50
+Number of buf/inv:                       2251
+Number of references:                      53
 
-Combinational area:             101349.070876
-Buf/Inv area:                     4285.630370
-Noncombinational area:          115106.904257
+Combinational area:             101619.988366
+Buf/Inv area:                     4560.105879
+Noncombinational area:          115110.208128
 Macro/Black Box area:            37986.582031
-Net Interconnect area:          138750.077754
+Net Interconnect area:          138618.133706
 
-Total cell area:                254442.557164
-Total area:                     393192.634918
+Total cell area:                254716.778525
+Total area:                     393334.912232
 1
 report_power > $final_reports_dir/power.txt
 sh cat $final_reports_dir/power.txt
@@ -1150,7 +1162,7 @@ Report : power
         -analysis_effort low
 Design : lxp32c_top
 Version: N-2017.09-SP3
-Date   : Thu Nov 25 21:14:16 2021
+Date   : Sun Nov 28 22:25:00 2021
 ****************************************
 
 
@@ -1180,26 +1192,26 @@ Power-specific unit information :
     Leakage Power Units = 1pW
 
 
-  Cell Internal Power  =  49.3035 mW  (100%)
-  Net Switching Power  =  56.8276 uW    (0%)
+  Cell Internal Power  =  49.2951 mW  (100%)
+  Net Switching Power  =  53.8257 uW    (0%)
                          ---------
-Total Dynamic Power    =  49.3603 mW  (100%)
+Total Dynamic Power    =  49.3489 mW  (100%)
 
-Cell Leakage Power     =   3.6784 mW
+Cell Leakage Power     =   3.6883 mW
 
 
                  Internal         Switching           Leakage            Total
 Power Group      Power            Power               Power              Power   (   %    )  Attrs
 --------------------------------------------------------------------------------------------------
 io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
-memory           694.4733            0.7568            0.0000          695.2301  (   1.31%)
+memory           693.7501            0.7568            0.0000          694.5070  (   1.31%)
 black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
 clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
-register       4.8553e+04            6.1917        2.2867e+09        5.0845e+04  (  95.85%)
+register       4.8551e+04            5.6437        2.2868e+09        5.0844e+04  (  95.85%)
 sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
-combinational     62.6583           49.8795        1.3917e+09        1.5043e+03  (   2.84%)
+combinational     56.2567           47.4254        1.4015e+09        1.5052e+03  (   2.84%)
 --------------------------------------------------------------------------------------------------
-Total          4.9310e+04 uW        56.8280 uW     3.6784e+09 pW     5.3045e+04 uW
+Total          4.9301e+04 uW        53.8259 uW     3.6883e+09 pW     5.3043e+04 uW
 1
 # netlist
 # write_file -f verilog -hier -output $outputs_dir/syn.v

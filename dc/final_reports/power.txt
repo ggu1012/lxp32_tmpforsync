@@ -4,7 +4,7 @@ Report : power
         -analysis_effort low
 Design : lxp32c_top
 Version: N-2017.09-SP3
-Date   : Thu Nov 25 21:14:16 2021
+Date   : Sun Nov 28 22:25:00 2021
 ****************************************
 
 
@@ -34,24 +34,24 @@ Power-specific unit information :
     Leakage Power Units = 1pW
 
 
-  Cell Internal Power  =  49.3035 mW  (100%)
-  Net Switching Power  =  56.8276 uW    (0%)
+  Cell Internal Power  =  49.2951 mW  (100%)
+  Net Switching Power  =  53.8257 uW    (0%)
                          ---------
-Total Dynamic Power    =  49.3603 mW  (100%)
+Total Dynamic Power    =  49.3489 mW  (100%)
 
-Cell Leakage Power     =   3.6784 mW
+Cell Leakage Power     =   3.6883 mW
 
 
                  Internal         Switching           Leakage            Total
 Power Group      Power            Power               Power              Power   (   %    )  Attrs
 --------------------------------------------------------------------------------------------------
 io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
-memory           694.4733            0.7568            0.0000          695.2301  (   1.31%)
+memory           693.7501            0.7568            0.0000          694.5070  (   1.31%)
 black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
 clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
-register       4.8553e+04            6.1917        2.2867e+09        5.0845e+04  (  95.85%)
+register       4.8551e+04            5.6437        2.2868e+09        5.0844e+04  (  95.85%)
 sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
-combinational     62.6583           49.8795        1.3917e+09        1.5043e+03  (   2.84%)
+combinational     56.2567           47.4254        1.4015e+09        1.5052e+03  (   2.84%)
 --------------------------------------------------------------------------------------------------
-Total          4.9310e+04 uW        56.8280 uW     3.6784e+09 pW     5.3045e+04 uW
+Total          4.9301e+04 uW        53.8259 uW     3.6883e+09 pW     5.3043e+04 uW
 1

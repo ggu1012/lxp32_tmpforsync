@@ -3,7 +3,7 @@
 Report : area
 Design : lxp32c_top
 Version: N-2017.09-SP3
-Date   : Thu Nov 25 21:14:16 2021
+Date   : Sun Nov 28 22:25:00 2021
 ****************************************
 
 Library(s) Used:
@@ -12,20 +12,20 @@ Library(s) Used:
     saed32sram_ss0p95v125c (File: /home/espanol/libraries/PDKS/SAED32_EDK_12162019/lib/sram/db_nldm/saed32sram_ss0p95v125c.db)
 
 Number of ports:                          652
-Number of nets:                         54100
-Number of cells:                        52966
-Number of combinational cells:          35533
-Number of sequential cells:             17428
+Number of nets:                         54146
+Number of cells:                        53012
+Number of combinational cells:          35576
+Number of sequential cells:             17431
 Number of macros/black boxes:               2
-Number of buf/inv:                       2205
-Number of references:                      50
+Number of buf/inv:                       2251
+Number of references:                      53
 
-Combinational area:             101349.070876
-Buf/Inv area:                     4285.630370
-Noncombinational area:          115106.904257
+Combinational area:             101619.988366
+Buf/Inv area:                     4560.105879
+Noncombinational area:          115110.208128
 Macro/Black Box area:            37986.582031
-Net Interconnect area:          138750.077754
+Net Interconnect area:          138618.133706
 
-Total cell area:                254442.557164
-Total area:                     393192.634918
+Total cell area:                254716.778525
+Total area:                     393334.912232
 1

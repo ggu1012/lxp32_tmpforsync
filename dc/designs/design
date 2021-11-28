@@ -5,7 +5,7 @@ Warning: Design 'lxp32c_top' contains 1 high-fanout nets. A fanout number of 100
 Report : design
 Design : lxp32c_top
 Version: N-2017.09-SP3
-Date   : Thu Nov 25 21:14:16 2021
+Date   : Sun Nov 28 22:25:00 2021
 ****************************************
 
 Design allows ideal nets on clock nets.
