@@ -6,70 +6,72 @@ Report : timing
         -max_paths 1
 Design : lxp32c_top
 Version: N-2017.09-SP3
-Date   : Sun Nov 28 22:25:00 2021
+Date   : Mon Nov 29 19:36:31 2021
 ****************************************
-
- # A fanout number of 1000 was used for high fanout net computations.
 
 Operating Conditions: ss0p95v125c   Library: saed32sram_ss0p95v125c
 Wire Load Model Mode: enclosed
 
-  Startpoint: cpu_inst/scratchpad_inst/ram2_collision_reg
+  Startpoint: cpu_inst/scratchpad_inst/ram_inst2/raddr_i_before_reg[0]
               (rising edge-triggered flip-flop clocked by clk_i)
-  Endpoint: cpu_inst/execute_inst/alu_inst/mul_inst/mul00_inst/p_o_reg[22]
+  Endpoint: cpu_inst/execute_inst/alu_inst/mul_inst/mul00_inst/p_o_reg[28]
             (rising edge-triggered flip-flop clocked by clk_i)
   Path Group: clk_i
   Path Type: max
 
   Des/Clust/Port     Wire Load Model       Library
   ------------------------------------------------
-  lxp32c_top         280000                saed32sram_ss0p95v125c
-  lxp32_execute_0_1_dsp
-                     16000                 saed32sram_ss0p95v125c
+  lxp32c_top         140000                saed32sram_ss0p95v125c
+  lxp32_cpu_0_1_dsp_00000000
+                     140000                saed32sram_ss0p95v125c
+  lxp32_alu_1_dsp    16000                 saed32sram_ss0p95v125c
 
   Point                                                   Incr       Path
   --------------------------------------------------------------------------
   clock clk_i (rise edge)                                 0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  cpu_inst/scratchpad_inst/ram2_collision_reg/CLK (DFFX1_HVT)
-                                                          0.00 #     0.00 r
-  cpu_inst/scratchpad_inst/ram2_collision_reg/Q (DFFX1_HVT)
-                                                          0.22       0.22 f
-  U597/Y (AND2X1_HVT)                                     0.09       0.32 f
-  U515/Y (NBUFFX8_HVT)                                    0.07       0.39 f
-  U501/Y (AO21X1_HVT)                                     0.12       0.51 f
-  cpu_inst/execute_inst/op2_i[3] (lxp32_execute_0_1_dsp)
-                                                          0.00       0.51 f
-  cpu_inst/execute_inst/U180/Y (NBUFFX4_HVT)              0.08       0.60 f
-  cpu_inst/execute_inst/U1316/Y (AND2X1_HVT)              0.08       0.67 f
-  cpu_inst/execute_inst/U1379/CO (FADDX1_HVT)             0.11       0.78 f
-  cpu_inst/execute_inst/U1375/S (FADDX1_HVT)              0.21       0.99 r
-  cpu_inst/execute_inst/U1407/CO (FADDX1_HVT)             0.15       1.14 r
-  cpu_inst/execute_inst/U1411/S (FADDX1_HVT)              0.23       1.37 f
-  cpu_inst/execute_inst/U785/Y (XOR3X2_HVT)               0.25       1.62 r
-  cpu_inst/execute_inst/U149/Y (AND2X1_HVT)               0.09       1.72 r
-  cpu_inst/execute_inst/U136/Y (AO21X1_HVT)               0.11       1.83 r
-  cpu_inst/execute_inst/U117/Y (NAND3X0_HVT)              0.07       1.89 f
-  cpu_inst/execute_inst/U531/Y (AND2X1_HVT)               0.09       1.99 f
-  cpu_inst/execute_inst/U318/Y (NAND2X2_HVT)              0.11       2.10 r
-  cpu_inst/execute_inst/U649/Y (INVX1_HVT)                0.03       2.13 f
-  cpu_inst/execute_inst/U128/Y (OA21X1_HVT)               0.09       2.21 f
-  cpu_inst/execute_inst/U127/Y (XOR2X2_HVT)               0.13       2.34 r
-  cpu_inst/execute_inst/alu_inst/mul_inst/mul00_inst/p_o_reg[22]/D (DFFX1_HVT)
-                                                          0.00       2.34 r
-  data arrival time                                                  2.34
+  cpu_inst/scratchpad_inst/ram_inst2/raddr_i_before_reg[0]/CLK (DFFX1_HVT)
+                                                          0.00       0.00 r
+  cpu_inst/scratchpad_inst/ram_inst2/raddr_i_before_reg[0]/Q (DFFX1_HVT)
+                                                          0.20       0.20 f
+  cpu_inst/U115/Y (AND2X1_HVT)                            0.07       0.27 f
+  cpu_inst/U105/Y (AND2X2_HVT)                            0.11       0.39 f
+  cpu_inst/U212/Y (NAND2X0_HVT)                           0.06       0.45 r
+  cpu_inst/U63/Y (NAND3X2_HVT)                            0.17       0.62 f
+  cpu_inst/execute_inst/op2_i[13] (lxp32_execute_0_1_dsp)
+                                                          0.00       0.62 f
+  cpu_inst/execute_inst/alu_inst/op2_i[13] (lxp32_alu_1_dsp)
+                                                          0.00       0.62 f
+  cpu_inst/execute_inst/alu_inst/U107/Y (AND2X1_HVT)      0.09       0.71 f
+  cpu_inst/execute_inst/alu_inst/U848/S (FADDX1_HVT)      0.20       0.91 r
+  cpu_inst/execute_inst/alu_inst/U903/CO (FADDX1_HVT)     0.17       1.07 r
+  cpu_inst/execute_inst/alu_inst/U104/Y (XOR3X2_HVT)      0.24       1.32 f
+  cpu_inst/execute_inst/alu_inst/U103/Y (XOR3X2_HVT)      0.23       1.55 r
+  cpu_inst/execute_inst/alu_inst/U988/S (FADDX1_HVT)      0.21       1.76 f
+  cpu_inst/execute_inst/alu_inst/U102/Y (OR2X2_HVT)       0.08       1.85 f
+  cpu_inst/execute_inst/alu_inst/U101/Y (INVX2_HVT)       0.03       1.87 r
+  cpu_inst/execute_inst/alu_inst/U127/Y (OA21X1_HVT)      0.09       1.96 r
+  cpu_inst/execute_inst/alu_inst/U205/Y (INVX1_HVT)       0.04       2.00 f
+  cpu_inst/execute_inst/alu_inst/U106/Y (AO21X1_HVT)      0.10       2.10 f
+  cpu_inst/execute_inst/alu_inst/U105/Y (INVX2_HVT)       0.05       2.15 r
+  cpu_inst/execute_inst/alu_inst/U1230/Y (OA21X1_HVT)     0.10       2.25 r
+  cpu_inst/execute_inst/alu_inst/U87/Y (NAND2X0_HVT)      0.08       2.32 f
+  cpu_inst/execute_inst/alu_inst/U86/Y (XNOR2X2_HVT)      0.14       2.46 r
+  cpu_inst/execute_inst/alu_inst/mul_inst/mul00_inst/p_o_reg[28]/D (DFFASX1_HVT)
+                                                          0.00       2.46 r
+  data arrival time                                                  2.46
 
   clock clk_i (rise edge)                                 2.00       2.00
   clock network delay (ideal)                             0.00       2.00
-  cpu_inst/execute_inst/alu_inst/mul_inst/mul00_inst/p_o_reg[22]/CLK (DFFX1_HVT)
+  cpu_inst/execute_inst/alu_inst/mul_inst/mul00_inst/p_o_reg[28]/CLK (DFFASX1_HVT)
                                                           0.00       2.00 r
-  library setup time                                     -0.09       1.91
-  data required time                                                 1.91
+  library setup time                                     -0.07       1.93
+  data required time                                                 1.93
   --------------------------------------------------------------------------
-  data required time                                                 1.91
-  data arrival time                                                 -2.34
+  data required time                                                 1.93
+  data arrival time                                                 -2.46
   --------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -0.43
+  slack (VIOLATED)                                                  -0.53
 
 
 1

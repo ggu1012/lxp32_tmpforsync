@@ -4,7 +4,7 @@ Report : power
         -analysis_effort low
 Design : lxp32c_top
 Version: N-2017.09-SP3
-Date   : Sun Nov 28 22:25:00 2021
+Date   : Mon Nov 29 19:36:32 2021
 ****************************************
 
 
@@ -19,10 +19,11 @@ Wire Load Model Mode: enclosed
 
 Design        Wire Load Model            Library
 ------------------------------------------------
-lxp32c_top             280000            saed32sram_ss0p95v125c
+lxp32c_top             140000            saed32sram_ss0p95v125c
+lxp32_cpu_0_1_dsp_00000000
+                       140000            saed32sram_ss0p95v125c
 lxp32_execute_0_1_dsp  16000             saed32sram_ss0p95v125c
-lxp32_ram256x32_1      140000            saed32sram_ss0p95v125c
-lxp32_ram256x32_0      140000            saed32sram_ss0p95v125c
+lxp32_alu_1_dsp        16000             saed32sram_ss0p95v125c
 
 
 Global Operating Voltage = 0.95 
@@ -34,24 +35,24 @@ Power-specific unit information :
     Leakage Power Units = 1pW
 
 
-  Cell Internal Power  =  49.2951 mW  (100%)
-  Net Switching Power  =  53.8257 uW    (0%)
+  Cell Internal Power  =   4.1809 mW   (99%)
+  Net Switching Power  =  33.9052 uW    (1%)
                          ---------
-Total Dynamic Power    =  49.3489 mW  (100%)
+Total Dynamic Power    =   4.2148 mW  (100%)
 
-Cell Leakage Power     =   3.6883 mW
+Cell Leakage Power     = 320.6160 uW
 
 
                  Internal         Switching           Leakage            Total
 Power Group      Power            Power               Power              Power   (   %    )  Attrs
 --------------------------------------------------------------------------------------------------
 io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
-memory           693.7501            0.7568            0.0000          694.5070  (   1.31%)
+memory         1.2791e+03            2.1242            0.0000        1.2812e+03  (  28.25%)
 black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
 clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
-register       4.8551e+04            5.6437        2.2868e+09        5.0844e+04  (  95.85%)
+register       2.8526e+03            6.4038        1.3282e+08        2.9918e+03  (  65.96%)
 sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
-combinational     56.2567           47.4254        1.4015e+09        1.5052e+03  (   2.84%)
+combinational     49.2764           25.3776        1.8779e+08          262.4473  (   5.79%)
 --------------------------------------------------------------------------------------------------
-Total          4.9301e+04 uW        53.8259 uW     3.6883e+09 pW     5.3043e+04 uW
+Total          4.1809e+03 uW        33.9056 uW     3.2062e+08 pW     4.5355e+03 uW
 1

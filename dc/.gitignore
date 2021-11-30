@@ -1,0 +1,4 @@
+*.log
+*.svf
+form.out
+**/work/
