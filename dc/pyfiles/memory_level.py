@@ -1,6 +1,5 @@
 import numpy as np
 import json
-from random import shuffle
 
 con_file = open('modfiles/connectivity.json', 'r')
 mem_file = open('modfiles/memory_level.json', 'w')
@@ -21,55 +20,39 @@ memory_level = dict()
 for cell in cells:
     memory_level[cell] = [-1 for n in range(len(start))]
 
+
+# BFS
 for idx, cell in enumerate(start):
 
-    stack = np.array([cell])
+    stack = np.array([cell], dtype=object)
 
     level = 0
-    while stack.size != len(connectivity):
-        
-        if stack.size >= len(connectivity):
-            print(stack.size)
-                
+    visited = np.array([], dtype=object)
+
+    while visited.size != len(connectivity):        
+
         stack_new = []
+
+        for cell in stack:
+            if cell in visited:
+                stack = np.delete(stack, np.where(stack == cell))
+
+        visited = np.append(visited, stack)
+
         for cell in stack:
             memory_level[cell][idx] = level
-            neighbor = np.array(connectivity[cell])
+            neighbor = np.array(connectivity[cell], dtype=object)
 
             for one in neighbor:
-                if memory_level[one][idx] != -1:
+                 if memory_level[one][idx] != -1:
                     neighbor = np.delete(neighbor, np.where(neighbor == one))
 
-            neighbor = np.unique(neighbor)
-            stack_new = np.append(stack_new, neighbor)
+            stack_new = np.unique(np.append(stack_new, neighbor))
 
         level += 1
 
         stack = stack_new
 
-
-    # stack = np.append([], connectivity[cell])
-    # memory_level[cell] = [0 for n in range(len(start))] 
-
-    # # DFS
-    # while len(stack) != 0:
-    #     tail, stack = stack[-1], stack[:-1]
-
-    #     # Skip the node that already been visited
-    #     if memory_level[tail][idx] != -1:
-    #         continue
-                
-    #     lowest = 1000000 # arbitrary large num
-    #     for neighbor in connectivity[tail]:
-    #         if memory_level[neighbor][idx] == -1:
-    #             continue
-    #         lowest = memory_level[neighbor][idx] if memory_level[neighbor][idx] <= lowest \
-    #             else lowest
-
-    #     memory_level[tail][idx] = lowest + 1
-
-    #     shuffle(connectivity[tail])
-    #     stack = np.append(stack, connectivity[tail])
 
 mem_file.write(json.dumps(memory_level))
 
